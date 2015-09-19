@@ -120,7 +120,6 @@
         var yScale = d3.scale.linear()
                 .domain([0, d3.max(data, function(d) { return d.count; })])
                 .range([height, 0]);
-
         //Define Y axis
         var yAxis = d3.svg.axis()
                 .scale(yScale)
