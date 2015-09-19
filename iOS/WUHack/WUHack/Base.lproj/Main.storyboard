@@ -57,7 +57,7 @@
         <!--View Controller-->
         <scene sceneID="nDc-HZ-cs6">
             <objects>
-                <viewController id="M4y-6O-FCL" sceneMemberID="viewController">
+                <viewController id="M4y-6O-FCL" customClass="ViewController" customModule="WUHack" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="svg-HH-jUh"/>
                         <viewControllerLayoutGuide type="bottom" id="MvH-oz-fj3"/>
@@ -71,6 +71,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZoW-av-24g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="148"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="QHQ-bk-yfs">
+            <objects>
+                <viewController id="iHj-lF-xwM" customClass="ViewController" customModule="WUHack" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I5L-5S-Cv4"/>
+                        <viewControllerLayoutGuide type="bottom" id="VMR-mS-fyh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PYK-7c-mLz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aB2-yQ-lim" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-818" y="485"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">

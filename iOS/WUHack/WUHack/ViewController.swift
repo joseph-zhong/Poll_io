@@ -14,7 +14,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        var query = PFQuery(className: "Channel")
+        var channel = query.getFirstObject()
+        var object = PFObject(className: "Poll")
+        object.setObject(true, forKey: "open")
+        object.setObject(channel!, forKey: "channel")
+        object.setObject("is joseph dumb?", forKey: "topic")
+        object.setObject(PFUser.currentUser()!, forKey: "submitter")
+        object.save()
+        
+        
+//         PFUser.currentUser()!.addObject(channel!.objectId!, forKey: "Channels")
+//         PFUser.currentUser()!.save()
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
