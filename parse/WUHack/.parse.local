@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "WUHack": {
+      "applicationId": "h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK"
+    },
+    "_default": {
+      "link": "WUHack"
+    }
+  }
+}
