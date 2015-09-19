@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <style>
+        body {
+            font: 10px sans-serif;
+        }
+
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .bar.positive {
+            fill: steelblue;
+        }
+        .bar.negative {
+            fill: #bc211a;
+        }
+        .bar.negative:hover {
+            fill: #f23f21;
+        }
+        .bar.positive:hover {
+            fill: #6fbdf2;
+        }
+        .x.axis path {
+            display: none;
+        }
+
+        .d3-tip {
+            line-height: 1;
+            font-weight: normal;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border-radius: 2px;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 10px;
+            width: 100%;
+            line-height: 1;
+            color: rgba(0, 0, 0, 0.6);
+            content: "\25BC";
+            position: absolute;
+            text-align: center;
+        }
+
+        /* Style northward tooltips differently */
+        .d3-tip.n:after {
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+</body>
+<script>
+    // Data set
+    var dataset = [ 5, 10, 13, 19, 21, 25, 22, 18, 15, 13,
+        11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
+
+    //Width and height
+    var w = 500,
+        h = 100,
+        barPadding = 5,
+        barWidth = (w / dataset.length - barPadding);
+
+    //Create SVG element
+    var svg = d3.select("body")
+        .append("svg")
+        .attr("width", w)
+        .attr("height", h);
+
+    // add bars with new attributes
+    svg.selectAll('.bar')
+        .data(dataset)
+        .enter().append('rect')
+        .attr('class', function(d) {
+            return d.score < 0 ? 'bar negative' : 'bar positive';
+        })
+        .attr("x", 0)
+        .attr("y", function(d) {
+            return h - d;  //Height minus data value
+        })
+        .attr("width", barWidth)
+        .attr("height", function(d) {
+            return d * 4;
+        })
+        .attr("x", function(d, i) {
+            return i * (barWidth + 3);
+        });
+
+    // x-axis
+    var xScale = d3.scale.linear()
+        .domain([0, d3.max(dataset, function(d) { return d[0]; })])
+        .range([0, w]);
+
+    var xAxis = d3.svg.axis()
+        .scale(xScale);
+
+    //Create an SVG group Element for the Axis elements and call the xAxis function
+    var xAxisGroup = svg.append("g").call(xAxis);
+
+    var yScale = d3.scale.linear()
+            .domain([0, d3.max(dataset, function(d) { return d[1]; })])
+            .range([0, h]);
+
+    //Define Y axis
+    var yAxis = d3.svg.axis()
+        .scale(yScale)
+        .orient('right');
+
+    //Create Y axis
+    svg.append("g")
+        .attr("class", "y axis")
+        .call(yAxis);
+</script>
+</html>

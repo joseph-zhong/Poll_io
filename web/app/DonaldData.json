@@ -1,0 +1,138 @@
+[
+  {	"count":1,
+    "score":"-100",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":2,
+    "score":"-75",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":3,
+    "score":"-50",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":4,
+    "score":"-25",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":1,
+    "score":"-20",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":2,
+    "score":"-15",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":3,
+    "score":"-10",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":4,
+    "score":"-5",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":5,
+    "score":"0",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":4,
+    "score":"5",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":3,
+    "score":"10",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":2,
+    "score":"15",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":1,
+    "score":"20",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":1,
+    "score":"25",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":2,
+    "score":"50",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":3,
+    "score":"75",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  },
+  {	"count":4,
+    "score":"100",
+    "sentences":[
+      {"sentence":"Donald is excellent!"},
+      {"sentence":"Donald is very great!"},
+      {"sentence":"Donald is superb!"}
+    ]
+  }
+]
