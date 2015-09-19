@@ -13,5 +13,20 @@ class ParseHelper
 {
     init(){}
     
+    func addGroup(completionHandler: (Bool!, NSError!) -> Void)
+    {
+        
+    }
+    
+    func pullAllGroups(completionHandler: (Bool!, NSError!) -> Void)
+    {
+    
+    }
+    
+    func pullGroup(completionHandler: (Bool!, NSError!) -> Void)
+    {
+        
+    }
+    
     
 }
