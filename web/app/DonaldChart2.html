@@ -22,7 +22,7 @@
         fill: #e0b83d;
     }
     .bar.neutral:hover {
-        fill: #f4e814;
+        fill: #f4db16;
     }
     .bar.negative:hover {
         fill: #f23f21;
@@ -69,7 +69,7 @@
 <script src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js'></script>
 <script>
 
-    var margin = {top: 100, right: 25, bottom: 30, left: 25},
+    var margin = {top: 100, right: 40, bottom: 30, left: 40},
         width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
                 - margin.left - margin.right,
         height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
@@ -97,79 +97,145 @@
                 + ' count: ' + d.count + ' score: ' + d.score
                 + '</span>';
         });
-
+    var zoom = d3.behavior.zoom();
+    var active = d3.select(null);
     var svg = d3.select('body').append('svg')
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
         .append('g')
+        .call(zoom.on("zoom", redraw))
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+
+    function redraw() {
+        var translation = d3.event.translate,
+            newx = translation[0],
+            newy = translation[1];
+        console.log("translate: ", zoom.translate(), "scale:", zoom.scale());
+        svg.attr("transform",
+                "translate(" + newx + "," + newy + ")"
+                + " scale(" + zoom.scale() + ")");
+    }
+
+    function manualZoom(){
+        var translation = zoom.translate,
+            newx = translation[0],
+            newy = translation[1];
+        svg.attr("transform",
+            "translate(" + newx + "," + newy + ")"
+            + " scale(" + zoom.scale() + ")");
+    }
 
     svg.call(tip);
 
-    d3.json('DonaldData.json', function(error, data){
 
-        // x-axis
-        var xScale = d3.scale.linear()
+    // x-axis
+    var xScale = d3.scale.linear()
             .domain([-100, 100]) // these are value mappings
             .range([0, width]); // these are pixels
+
+    var yScale;
+
+    d3.json('DonaldData.json', function(error, data){
+
 
         var xAxis = d3.svg.axis()
                 .scale(xScale)
                 .orient('bottom');
 
-        var yScale = d3.scale.linear()
+        yScale = d3.scale.linear()
                 .domain([0, d3.max(data, function(d) { return d.count; })])
                 .range([height, 0]);
         //Define Y axis
         var yAxis = d3.svg.axis()
-                .scale(yScale)
-                .orient('left');
+            .scale(yScale)
+            .orient('left');
 
+        // X Axis drawing
         svg.append('g')
-                .attr('class', 'x axis')
-                .attr('transform', 'translate(0,' + height + ')')
-                .attr('y', 6)
-                .attr('dy', '.71em')
-                .style('text-anchor', 'end')
-                .text('Score')
-                .call(xAxis);
+            .attr('class', 'x axis')
+            .attr('transform', 'translate(0,' + height + ')')
+            .attr('y', 6)
+            .attr('dy', '.71em')
+            .style('text-anchor', 'end')
+            .text('Score')
+            .call(xAxis);
 
+        // Y Axis drawing
         svg.append('g')
-                .attr('class', 'y axis')
-                .call(yAxis)
-                .append('text')
-                .attr('transform', 'rotate(-90)')
-                .attr('y', 6)
-                .attr('dy', '.71em')
-                .style('text-anchor', 'end')
-                .text('Count');
+            .attr('class', 'y axis')
+            .call(yAxis)
+            .append('text')
+            .attr('transform', 'rotate(-90)')
+            .attr('y', 6)
+            .attr('dy', '.71em')
+            .style('text-anchor', 'end')
+            .text('Count');
 
+        // Data Bar
         svg.selectAll('.bar')
-                .data(data)
-                .enter().append('rect')
-                .attr('class', 'bar')
-                .attr('class', function(d) {
-                    if(d.score < -15){
-                        return 'bar negative';
-                    }
-                    else if(d.score < 15){
-                        return 'bar neutral';
-                    }
-                    else {
-                        return 'bar positive';
-                    }
-                })
-                .attr('x', function(d) { return xScale(d.score); })
-                .attr('width', 15)
-                .attr('y', function(d) { return yScale(d.count); })
-                .attr('height', function(d) { return height - yScale(d.count); })
-                .on('mouseover', tip.show)
-                .on('mouseout', tip.hide);
+            .data(data)
+            .enter().append('rect')
+            .attr('class', 'bar')
+            .attr('class', function(d) {
+                if(d.score < -15){
+                    return 'bar negative';
+                }
+                else if(d.score < 15){
+                    return 'bar neutral';
+                }
+                else {
+                    return 'bar positive';
+                }
+            })
+            .attr('x', function(d) { return xScale(d.score) - 7; })
+            .attr('width', 14)
+            .attr('y', function(d) { return yScale(d.count); })
+            .attr('height', function(d) { return height - yScale(d.count); })
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
     });
 
-    function type(d) {
-        d.count = +d.count;
-        return d;
-    }
-
+//    var timer;
+//    function clicked(d) {
+//        if (active.node() === this) {
+//            console.log('active: ' + active.node());
+//            return reset();
+//        }
+//        active.classed("active", false);
+//        active = d3.select(this).classed("active", true);
+//
+////        var bounds = path.bounds(d),
+////                dx = bounds[1][0] - bounds[0][0],
+////                dy = bounds[1][1] - bounds[0][1],
+////                x = (bounds[0][0] + bounds[1][0]) / 2,
+////                y = (bounds[0][1] + bounds[1][1]) / 2,
+////                scale = .9 / Math.max(dx / width, dy / height),
+////                translate = [width / 2 - scale * x, height / 2 - scale * y];
+//        svg.transition()
+//            .duration(750)
+//            .call(zoom.translate([0, 0]).scale(1).event);
+//    }
+//
+//    function reset() {
+//
+//        active.classed("active", false);
+//
+//        active = d3.select(null);
+//
+//        svg.transition()
+//            .duration(750)
+//            .call(zoom.translate([0, 0]).scale(1).event);
+//        console.log('reset3');
+//    }
+//
+//    function zoomed() {
+//        g.style("stroke-width", 1.5 / d3.event.scale + "px");
+//        g.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+//    }
+//
+//    // If the drag behavior prevents the default click,
+//    // also stop propagation so we don’t click-to-zoom.
+//    function stopped() {
+//        if (d3.event.defaultPrevented) d3.event.stopPropagation();
+//    }
 </script>
