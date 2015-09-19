@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import Parse
+
+class ParseHelper
+{
+    init(){}
+    
+    
+}
