@@ -79,12 +79,12 @@
             .orient("left")
             .tickFormat(formatPercent);
 
-    var tip = d3.tip()
-            .attr('class', 'd3-tip')
-            .offset([-10, 0])
-            .html(function(d) {
-                return "<strong>Frequency:</strong> <span style='color:#E9F2F9'>" + d.frequency + "</span>";
-            })
+        var tip = d3.tip()
+                .attr('class', 'd3-tip')
+                .offset([-10, 0])
+                .html(function(d) {
+                    return "<strong>Frequency:</strong> <span style='color:#E9F2F9'>" + d.frequency + "</span>";
+                })
 
     var svg = d3.select("body").append("svg")
             .attr("width", width + margin.left + margin.right)
@@ -122,7 +122,7 @@
                 .attr("y", function(d) { return y(d.frequency); })
                 .attr("height", function(d) { return height - y(d.frequency); })
                 .on('mouseover', tip.show)
-                .on('mouseout', tip.hide)
+                .on('mouseout', tip.hide);
 
     });
 

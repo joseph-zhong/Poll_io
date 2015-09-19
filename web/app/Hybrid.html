@@ -45,47 +45,63 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js'></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 <script>
-
+    /**
+     * Given dimensions for the chart
+     * @type {number}
+     */
     var width = 960,
-            height = 500;
+        height = 500;
 
+    /**
+     * x-dimension range
+     */
     var x = d3.scale.linear()
-            .range([0, width]);
+        .range([0, width]);
 
+    /**
+     * y-dimension range
+     */
     var y = d3.scale.linear()
-            .range([0, height]);
+        .range([0, height]);
+
+    /**
+     * x Axis
+     */
+    var xAxis = d3.svg.axis()
+        .scale(x)
+        .orient('bottom');
 
     var tip = d3.tip()
-            .attr('class', 'd3-tip')
-            .offset([-10, 0])
-            .html(function(d) {
-                var cache = [];
-                return "<strong>Data:</strong> <span style='color:#E9F2F9'>"
-                        + JSON.stringify(d,
-                                function(key, value) {
-                                    if (typeof value === 'object' && value !== null) {
-                                        if (cache.indexOf(value) !== -1) {
-                                            // Circular reference found, discard key
-                                            return;
-                                        }
-                                        // Store value in our collection
-                                        cache.push(value);
-                                    }
-                                    return value;
-                                });
-                cache = [];
-                + "</span>";
-            });
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function(d) {
+            var cache = [];
+            return "<strong>Data:</strong> <span style='color:#E9F2F9'>"
+                    + JSON.stringify(d,
+                        function(key, value) {
+                            if (typeof value === 'object' && value !== null) {
+                                if (cache.indexOf(value) !== -1) {
+                                    // Circular reference found, discard key
+                                    return;
+                                }
+                                // Store value in our collection
+                                cache.push(value);
+                            }
+                            return value;
+                        });
+            cache = [];
+            + "</span>";
+        });
 
     var color = d3.scale.category20c();
 
     var partition = d3.layout.partition()
-            .children(function(d) { return isNaN(d.value) ? d3.entries(d.value) : null; })
-            .value(function(d) { return d.value; });
+        .children(function(d) { return isNaN(d.value) ? d3.entries(d.value) : null; })
+        .value(function(d) { return d.value; });
 
     var svg = d3.select('body').append('svg')
-            .attr('width', width)
-            .attr('height', height);
+        .attr('width', width)
+        .attr('height', height);
 
     svg.call(tip);
 
@@ -112,11 +128,11 @@
         y.domain([d.y, 1]).range([d.y ? 20 : 0, height]);
 
         rect.transition()
-                .duration(750)
-                .attr('x', function(d) { return x(d.x); })
-                .attr('y', function(d) { return y(d.y); })
-                .attr('width', function(d) { return x(d.x + d.dx) - x(d.x); })
-                .attr('height', function(d) { return y(d.y + d.dy) - y(d.y); });
+            .duration(750)
+            .attr('x', function(d) { return x(d.x); })
+            .attr('y', function(d) { return y(d.y); })
+            .attr('width', function(d) { return x(d.x + d.dx) - x(d.x); })
+            .attr('height', function(d) { return y(d.y + d.dy) - y(d.y); });
     }
 
 </script>
