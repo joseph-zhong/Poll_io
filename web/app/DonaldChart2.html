@@ -69,7 +69,7 @@
 <script src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js'></script>
 <script>
 
-    var margin = {top: 100, right: 25, bottom: 30, left: 25},
+    var margin = {top: 100, right: 40, bottom: 30, left: 40},
         width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
                 - margin.left - margin.right,
         height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
@@ -106,18 +106,22 @@
 
     svg.call(tip);
 
-    d3.json('DonaldData.json', function(error, data){
 
-        // x-axis
-        var xScale = d3.scale.linear()
+    // x-axis
+    var xScale = d3.scale.linear()
             .domain([-100, 100]) // these are value mappings
             .range([0, width]); // these are pixels
+
+    var yScale;
+
+    d3.json('DonaldData.json', function(error, data){
+
 
         var xAxis = d3.svg.axis()
                 .scale(xScale)
                 .orient('bottom');
 
-        var yScale = d3.scale.linear()
+        yScale = d3.scale.linear()
                 .domain([0, d3.max(data, function(d) { return d.count; })])
                 .range([height, 0]);
         //Define Y axis
@@ -159,10 +163,11 @@
                         return 'bar positive';
                     }
                 })
-                .attr('x', function(d) { return xScale(d.score); })
-                .attr('width', 15)
+                .attr('x', function(d) { return xScale(d.score) - 7; })
+                .attr('width', 14)
                 .attr('y', function(d) { return yScale(d.count); })
                 .attr('height', function(d) { return height - yScale(d.count); })
+                .on('click', clicked)
                 .on('mouseover', tip.show)
                 .on('mouseout', tip.hide);
     });
@@ -172,4 +177,16 @@
         return d;
     }
 
+    function clicked(d) {
+        console.log("hello");
+        xScale.domain([d.xScale, d.xScale + d.dx]);
+        yScale.domain([d.yScale, 1]).range([d.yScale ? 20 : 0, height]);
+
+        svg.transition()
+            .duration(750)
+            .attr('x', function(d) { return xScale(d.xScale); })
+            .attr('y', function(d) { return yScale(d.yScale); })
+            .attr('width', function(d) { return xScale(d.xScale + d.dx) - xScale(d.xScale); })
+            .attr('height', function(d) { return yScale(d.yScale + d.dy) - yScale(d.yScale); });
+    }
 </script>
