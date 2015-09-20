@@ -12,7 +12,7 @@
 		3E07DEA11BAD97FC00AE3D59 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E07DEA01BAD97FC00AE3D59 /* RegisterViewController.swift */; };
 		3E07DEA31BAD9D0A00AE3D59 /* ParseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E07DEA21BAD9D0A00AE3D59 /* ParseHelper.swift */; };
 		3E50FD151BAD3BD000E39A77 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50FD141BAD3BD000E39A77 /* AppDelegate.swift */; };
-		3E50FD171BAD3BD000E39A77 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50FD161BAD3BD000E39A77 /* ViewController.swift */; };
+		3E50FD171BAD3BD000E39A77 /* DataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E50FD161BAD3BD000E39A77 /* DataViewController.swift */; };
 		3E50FD1A1BAD3BD000E39A77 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E50FD181BAD3BD000E39A77 /* Main.storyboard */; };
 		3E50FD1C1BAD3BD000E39A77 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E50FD1B1BAD3BD000E39A77 /* Images.xcassets */; };
 		3E50FD1F1BAD3BD000E39A77 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E50FD1D1BAD3BD000E39A77 /* LaunchScreen.xib */; };
@@ -33,6 +33,7 @@
 		3E50FD4F1BAD3D2300E39A77 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E50FD4D1BAD3D2300E39A77 /* Parse.framework */; };
 		A5BA1F891BAE7380002755E7 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA1F881BAE7380002755E7 /* QRScannerViewController.swift */; };
 		A5CF7FEA1BAEB0F9000EA399 /* ChannelFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF7FE91BAEB0F9000EA399 /* ChannelFilterViewController.swift */; };
+		A5CF7FEC1BAF108D000EA399 /* ChannelsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF7FEB1BAF108D000EA399 /* ChannelsTableViewController.swift */; };
 		DFD9CE5FA7F6E9C093A51F60 /* libPods-WUHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9831BC7AF719D92D28AF70B9 /* libPods-WUHack.a */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +55,7 @@
 		3E50FD0F1BAD3BD000E39A77 /* WUHack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WUHack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E50FD131BAD3BD000E39A77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3E50FD141BAD3BD000E39A77 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3E50FD161BAD3BD000E39A77 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3E50FD161BAD3BD000E39A77 /* DataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataViewController.swift; sourceTree = "<group>"; };
 		3E50FD191BAD3BD000E39A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E50FD1B1BAD3BD000E39A77 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E50FD1E1BAD3BD000E39A77 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		9831BC7AF719D92D28AF70B9 /* libPods-WUHack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WUHack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BA1F881BAE7380002755E7 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		A5CF7FE91BAEB0F9000EA399 /* ChannelFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelFilterViewController.swift; sourceTree = "<group>"; };
+		A5CF7FEB1BAF108D000EA399 /* ChannelsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				3E50FD141BAD3BD000E39A77 /* AppDelegate.swift */,
-				3E50FD161BAD3BD000E39A77 /* ViewController.swift */,
+				3E50FD161BAD3BD000E39A77 /* DataViewController.swift */,
 				3E50FD181BAD3BD000E39A77 /* Main.storyboard */,
+				A5CF7FEB1BAF108D000EA399 /* ChannelsTableViewController.swift */,
 				A5CF7FE91BAEB0F9000EA399 /* ChannelFilterViewController.swift */,
 				A5BA1F881BAE7380002755E7 /* QRScannerViewController.swift */,
 				3E07DEA21BAD9D0A00AE3D59 /* ParseHelper.swift */,
@@ -355,9 +358,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E07DE9D1BAD95F000AE3D59 /* LoginViewController.swift in Sources */,
+				A5CF7FEC1BAF108D000EA399 /* ChannelsTableViewController.swift in Sources */,
 				3E07DEA11BAD97FC00AE3D59 /* RegisterViewController.swift in Sources */,
 				3E07DE9F1BAD971300AE3D59 /* LoginHelper.swift in Sources */,
-				3E50FD171BAD3BD000E39A77 /* ViewController.swift in Sources */,
+				3E50FD171BAD3BD000E39A77 /* DataViewController.swift in Sources */,
 				3E50FD151BAD3BD000E39A77 /* AppDelegate.swift in Sources */,
 				3E07DEA31BAD9D0A00AE3D59 /* ParseHelper.swift in Sources */,
 				A5CF7FEA1BAEB0F9000EA399 /* ChannelFilterViewController.swift in Sources */,

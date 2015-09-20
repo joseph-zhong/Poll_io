@@ -17,7 +17,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
     var videoPreviewLayer:AVCaptureVideoPreviewLayer?
     var qrCodeFrameView:UIView?
     
-    
+    @IBOutlet weak var homeNavigationButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel! // this is just for debugging
     
@@ -67,6 +67,7 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
         captureSession?.startRunning()
         
         // Move the labels to the top view
+        view.bringSubviewToFront(homeNavigationButton)
         view.bringSubviewToFront(titleLabel)
         //-view.bringSubviewToFront(messageLabel)
         
