@@ -86,7 +86,49 @@
     var EXAMPLE_QUESTION = 'ie. Who will win the next election?';
     var EXAMPLE_PHONE = '+14256287248';
 
+    console.log('initialize here');
     Parse.initialize("h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK", "E6EhFQPwTQmU3Js7p4aalq080sKkS5UqT7vUrgJZ");
+
+    console.log('done initializing, starting polling');
+
+    var Channel = Parse.Object.extend('Channel');
+    var channelQuery = new Parse.query(Channel);
+    channelQuery.find({
+        success: function(results){
+            if(results.length == 0){
+                // bad results
+                console.log('no channels found!');
+            }
+            else{
+                console.log('found results!')
+                console.log($('input').val());
+
+                var Poll = Parse.Object.extend('Poll');
+                var poll = new Poll();
+
+                poll.set('open', true);
+                poll.set('submitter', currentUser);
+                poll.set('topic', $('input').val());
+                poll.set('channel', channelsAvailable[0]);
+
+                poll.save().save(null, {
+                    success: function(newPoll) {
+                        console.log('new poll saved!');
+                        return false;
+                    },
+                    error: function(newPoll, error) {
+                        console.log('new poll NOT saved');
+                        return false;
+                    }
+                });
+            }
+        },
+        error: function(error){
+            console.log('error in finding channels!');
+            return false;
+        }
+    });
+
 //    var currentUser = Parse.User.current();
     console.log('hello!');
 //    if(currentUser != null){
@@ -156,6 +198,7 @@
 //    });
 
     var channelsAvailable;
+
 
     function postQuestion(){
         // already logged in - handle poll posting!
