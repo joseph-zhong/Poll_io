@@ -93,14 +93,19 @@
 
 
 
+    // login
     var currentUser = Parse.User.current();
     console.log('hello!');
         console.log('logging in...');
-        // really brute force automated login process
+
+
+    // LOG IN
         Parse.User.logIn("calvin", "password", {
             success: function(user) {
                 // Do stuff after successful login.
                 console.log('successful login: ' + user);
+
+                // QUERY FOR CHANNEL
                 var currentUser = Parse.User.current();
                 var Channel = Parse.Object.extend('Channel');
                 var channelQuery = new Parse.Query(Channel);
@@ -119,9 +124,12 @@
 
                             poll.set('open', true);
                             poll.set('submitter', currentUser);
-                            poll.set('topic', 'asdf');
+
+                            // TOPIC IS NOT SET
+                            poll.set('topic', $('input').val());
                             poll.set('channel', results[0]);
 
+                            // POST
                             poll.save(null, {
                                 success: function(newPoll) {
                                     console.log('new poll saved!');
@@ -139,34 +147,10 @@
                         return false;
                     }
                 });
-            },
-            error: function(user, error) {
-                console.log('failed login: ' + error);
-                // The login failed. Check error to see why.
-                Parse.User.logIn("aneesh", "password", {
-                    success: function(user) {
-                        // Do stuff after successful login.
-                        console.log('successful login: ' + user);
-                    },
-                    error: function(user, error) {
-                        console.log('failed login: ' + error);
-                        // The login failed. Check error to see why.
-                        Parse.User.logIn("joseph", "password", {
-                            success: function(user) {
-                                // Do stuff after successful login.
-                                console.log('successful login: ' + user);
-                            },
-                            error: function(user, error) {
-                                console.log('failed login: ' + error);
-                                // The login failed. Check error to see why.
-
-                            }
-                        });
-                    }
-                });
             }
         });
 
+$(document)
 
 //
 //    // create new user when asking for phone number
