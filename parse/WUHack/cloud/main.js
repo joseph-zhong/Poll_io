@@ -39,42 +39,35 @@ Parse.Cloud.define("analyzeEntity", function(request, response) {
             console.log("parsed");
             var entities = json.entities;
             var Alchemy = Parse.Object.extend("Alchemy");
-            var Entity = Parse.Object.extend("Entities")
-            var object = new Alchemy();
-            object.set("body", json.text)
-            object.save(null, {
-            success: function(object) {
-              for(var i = 0; i < entities.length; i++){
-                var current = entities[i];
-                console.log("hi1");
-                var parsedcurrent = JSON.parse(current);
-                console.log("hi2");
-                var newentitity = new Entity();
-                console.log("new entity");
-                newentitity.set("name", parsedcurrent.text);
-                newentitity.set("relevance", parsedcurrent.relevance);
-                var parsedsent = JSON.parse(parsedcurrent.sentiment);
-                console.log("second parse");
-                newentitity.set("score", parsedsent.score);
-                newentitity.set("Alchemy", object);
-                console.log(newentitity);
-                newentitity.save(null, {
-                  success: function(object){
+            var Entity = Parse.Object.extend("Entities");
+            console.log("1");
+            var alchobject = new Alchemy();
+            alchobject.set("body", json.text)
+            console.log(entities.length);
+            alchobject.save(null, {
+              success: function(object) {
+                for(var i = 0; i < entities.length; i++){
+                  var current = entities[i];
+                  console.log(current.text);
+                  var newentitity = new Entity();
+                  console.log("new entity");
+                  newentitity.set("name", current.text);
+                  newentitity.set("relevance", current.relevance);
+                  console.log("second parse");
+                  var jobj = current.sentiment;
 
-                  },
-                  error: function(object, error){
-                    alert('Failed to create new object, with error code: ' + error.message); 
-                  }
-                });
-              }
-            },
-            error: function(object, error) {
+                  newentitity.set("score", jobj.score);
+                  newentitity.set("Alchemy", object.id);
+                  console.log(newentitity);
+                  newentitity.save();
+                }
+              },
+              error: function(gameScore, error) {
+                // Execute any logic that should take place if the save fails.
+              // error is a Parse.Error with an error code and message.
               alert('Failed to create new object, with error code: ' + error.message);
-            }
+              }
           });
-
-            console.log(entities);
-            response.success(alchemyResponse);
         }, function(alchemyResponse) {
             console.error("Failed with response: " + response.status);
             response.error("Alchemy API is unavailable");
@@ -152,23 +145,19 @@ Parse.Cloud.beforeSave("Response", function(request, response) {
     var Response = Parse.Object.extend("Response");
     var query = new Parse.Query(Response);
     query.equalTo("twilio_id", twilio_id);
-    query.find({
-      success: function(results) {
-          if (results.length === 0) {
-              response.success();
+    query.first({
+      success: function(object) {
+          if (object) {
+              console.log("object found");
+              response.error("Response already exists");
           }
           else {
-              response.error("Response already exists");
+              response.success();
          }
       },
       error: function(error) {
-          response.error();
+          response.error("An error occured");
       }
   });
 });
-
-
-Parse.Cloud.afterSave("Alchemy", function(request, response){
-  //parsing for webapp here
-})
 
