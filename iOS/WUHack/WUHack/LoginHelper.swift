@@ -21,6 +21,7 @@ class LoginHelper
         user.password = password
         user.setObject(phonenumber, forKey: "phonenumber")
         
+        
         user.signUpInBackgroundWithBlock {
             (succeeded: Bool, error: NSError?) -> Void in
             if let error = error {
@@ -29,6 +30,10 @@ class LoginHelper
                 completionHandler(false, error)
             } else {
                 // Hooray! Let them use the app now.
+                var channels = PFObject(className: "UserChannels")
+                channels.setObject(PFUser.currentUser()!.objectId!, forKey: "user")
+                channels.setObject(phonenumber, forKey: "phonenumber")
+                channels.save()
                 completionHandler(true, nil)
             }
         }

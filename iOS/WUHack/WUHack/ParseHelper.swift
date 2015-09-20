@@ -28,5 +28,10 @@ class ParseHelper
         
     }
     
+    func addSelfToGroup()
+    {
+        
+    }
+    
     
 }

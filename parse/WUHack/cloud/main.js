@@ -1,5 +1,8 @@
 //initialize twilio client
-var client = require('twilio')('ACce74634b53fda11e3948c74211d8e8f8', 'ACce74634b53fda11e3948c74211d8e8f8');
+var client = require('twilio')('ACce74634b53fda11e3948c74211d8e8f8', '0195f254440349851c19c169234ac873');
+
+var twilionumber = "+15745164355"
+
 
 var ALCHEMY_URL = "http://gateway-a.watsonplatform.net/";
 var APIKEY  = "503b2b1e7803bf3be7e7eadad8ddf4b81abd822f";
@@ -38,7 +41,7 @@ Parse.Cloud.define("analyzeResponse", function(request, response) {
     }
 });
 
-Parse.Cloud.beforeSave("Poll", function(request, response){
+Parse.Cloud.afterSave("Poll", function(request, response){
   console.log("started");
   if(request.object.existed() == true)
   {
@@ -50,46 +53,42 @@ Parse.Cloud.beforeSave("Poll", function(request, response){
   var senderphone = request.object.get("submitter").get("phonenumber");
   console.log(senderphone);
   channel.fetch({
-    success: function(channelobject){
+      success: function(channelobject){
       console.log(channelobject);
-      var userquery = new Parse.Query('Parse.User');
-      //query.equalTo("Channels", channelobject.id);
-      userquery.find({
+      var query = new Parse.Query('UserChannels');
+      query.equalTo("Channels", channelobject.id);
+      query.find({
         success: function(results) {
-            console.log('hello')
-            // console.log('results');
-            // for(var i = 0; i < results.length; i++){
-            //   var userobj = results[i];
-            //   var phonenum = userobj.get('phonenumber');
-            //   console.log(phonenum);
-            //   if(phonenum == senderphone)
-            //   {
-            //     continue;
-            //   }
-            //   client.sendSms({
-            //     to: phonenum,
-            //     from: senderphone,
-            //     body: topic
-            //   }, function(err, responseData) {
-            //       if (err) {
-            //         console.log(err);
-            //       }
-            //       else {
-            //         console.log(responseData.body);
-            //       }
-            //     });
-            //   }
-            //   response.success();
+            console.log(results);
+            for(var i = 0; i < results.length; i++){
+              var userobj = results[i];
+              var phonenum = userobj.get('phonenumber');
+              console.log(phonenum);
+              if(phonenum == senderphone)
+              {
+                continue;
+              }
+              client.sendSms({
+                to: phonenum,
+                from: twilionumber,
+                body: topic
+              }, function(err, responseData) {
+                  if (err) {
+                    console.log(err);
+                  }
+                  else {
+                    console.log(responseData.body);
+                  }
+                });
+              }
           },
           error: function(error){
             console.log(error);
           }
         })
-        response.success();
       },
       error: function(error){
         console.log(error);
-        response.error(error);
       }
     })
 })

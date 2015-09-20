@@ -22,7 +22,7 @@ class ViewController: UIViewController {
         object.setObject("is joseph dumb?", forKey: "topic")
         object.setObject(PFUser.currentUser()!, forKey: "submitter")
         object.save()
-        
+//
         
 //         PFUser.currentUser()!.addObject(channel!.objectId!, forKey: "Channels")
 //         PFUser.currentUser()!.save()
