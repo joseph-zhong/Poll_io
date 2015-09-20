@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 class LoginViewController : UIViewController, UITextFieldDelegate
 {
@@ -30,6 +31,22 @@ class LoginViewController : UIViewController, UITextFieldDelegate
         
         username.delegate = self
         password.delegate = self
+        
+        println("fckuparse")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+//        if (PFUser.currentUser() != nil)
+//        {
+//            self.performSegueWithIdentifier("SegueFromLogin", sender: self)
+//            
+//            println("current user is not nil")
+//        }
+//        else
+//        {
+//            println("user is not logged in")
+//        }
+
     }
     
     @IBAction func login(sender: AnyObject)
@@ -42,6 +59,7 @@ class LoginViewController : UIViewController, UITextFieldDelegate
             }
             else
             {
+                println("Failed login with error: \(error)")
                 let alert = UIAlertController(title: "Oops!", message: "wrong username or password", preferredStyle: UIAlertControllerStyle.Alert)
                 let alertAction = UIAlertAction(title: "Try Again", style: UIAlertActionStyle.Default) { (UIAlertAction) -> Void in }
                 alert.addAction(alertAction)

@@ -31,6 +31,8 @@
 		3E50FD4B1BAD3CF100E39A77 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E50FD4A1BAD3CF100E39A77 /* Social.framework */; };
 		3E50FD4E1BAD3D2300E39A77 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E50FD4C1BAD3D2300E39A77 /* Bolts.framework */; };
 		3E50FD4F1BAD3D2300E39A77 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E50FD4D1BAD3D2300E39A77 /* Parse.framework */; };
+		A5BA1F891BAE7380002755E7 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5BA1F881BAE7380002755E7 /* QRScannerViewController.swift */; };
+		A5CF7FEA1BAEB0F9000EA399 /* ChannelFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5CF7FE91BAEB0F9000EA399 /* ChannelFilterViewController.swift */; };
 		DFD9CE5FA7F6E9C093A51F60 /* libPods-WUHack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9831BC7AF719D92D28AF70B9 /* libPods-WUHack.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,8 @@
 		42861E8907FA1A40F024A975 /* Pods-WUHack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WUHack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WUHack/Pods-WUHack.debug.xcconfig"; sourceTree = "<group>"; };
 		675764CF6711839B771C7B1C /* Pods-WUHack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WUHack.release.xcconfig"; path = "Pods/Target Support Files/Pods-WUHack/Pods-WUHack.release.xcconfig"; sourceTree = "<group>"; };
 		9831BC7AF719D92D28AF70B9 /* libPods-WUHack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WUHack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5BA1F881BAE7380002755E7 /* QRScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
+		A5CF7FE91BAEB0F9000EA399 /* ChannelFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelFilterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,20 +118,7 @@
 		3E50FD061BAD3BD000E39A77 = {
 			isa = PBXGroup;
 			children = (
-				3E50FD4C1BAD3D2300E39A77 /* Bolts.framework */,
-				3E50FD4D1BAD3D2300E39A77 /* Parse.framework */,
-				3E50FD4A1BAD3CF100E39A77 /* Social.framework */,
-				3E50FD481BAD3CE700E39A77 /* Accounts.framework */,
-				3E50FD461BAD3CDF00E39A77 /* libsqlite3.dylib */,
-				3E50FD441BAD3CD600E39A77 /* libz.dylib */,
-				3E50FD421BAD3CCF00E39A77 /* SystemConfiguration.framework */,
-				3E50FD401BAD3CC400E39A77 /* StoreKit.framework */,
-				3E50FD3E1BAD3CBB00E39A77 /* Security.framework */,
-				3E50FD3C1BAD3CB100E39A77 /* QuartzCore.framework */,
-				3E50FD3A1BAD3CA800E39A77 /* CoreLocation.framework */,
-				3E50FD381BAD3C9F00E39A77 /* CoreGraphics.framework */,
-				3E50FD361BAD3C9700E39A77 /* CFNetwork.framework */,
-				3E50FD341BAD3C9000E39A77 /* AudioToolbox.framework */,
+				A5BA1F871BAE71E6002755E7 /* Frameworks */,
 				3E50FD111BAD3BD000E39A77 /* WUHack */,
 				3E50FD271BAD3BD000E39A77 /* WUHackTests */,
 				3E50FD101BAD3BD000E39A77 /* Products */,
@@ -151,6 +142,8 @@
 				3E50FD141BAD3BD000E39A77 /* AppDelegate.swift */,
 				3E50FD161BAD3BD000E39A77 /* ViewController.swift */,
 				3E50FD181BAD3BD000E39A77 /* Main.storyboard */,
+				A5CF7FE91BAEB0F9000EA399 /* ChannelFilterViewController.swift */,
+				A5BA1F881BAE7380002755E7 /* QRScannerViewController.swift */,
 				3E07DEA21BAD9D0A00AE3D59 /* ParseHelper.swift */,
 				3E07DE9C1BAD95F000AE3D59 /* LoginViewController.swift */,
 				3E07DE9E1BAD971300AE3D59 /* LoginHelper.swift */,
@@ -194,6 +187,27 @@
 				675764CF6711839B771C7B1C /* Pods-WUHack.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A5BA1F871BAE71E6002755E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E50FD4C1BAD3D2300E39A77 /* Bolts.framework */,
+				3E50FD4D1BAD3D2300E39A77 /* Parse.framework */,
+				3E50FD4A1BAD3CF100E39A77 /* Social.framework */,
+				3E50FD481BAD3CE700E39A77 /* Accounts.framework */,
+				3E50FD461BAD3CDF00E39A77 /* libsqlite3.dylib */,
+				3E50FD441BAD3CD600E39A77 /* libz.dylib */,
+				3E50FD421BAD3CCF00E39A77 /* SystemConfiguration.framework */,
+				3E50FD401BAD3CC400E39A77 /* StoreKit.framework */,
+				3E50FD3E1BAD3CBB00E39A77 /* Security.framework */,
+				3E50FD3C1BAD3CB100E39A77 /* QuartzCore.framework */,
+				3E50FD3A1BAD3CA800E39A77 /* CoreLocation.framework */,
+				3E50FD381BAD3C9F00E39A77 /* CoreGraphics.framework */,
+				3E50FD361BAD3C9700E39A77 /* CFNetwork.framework */,
+				3E50FD341BAD3C9000E39A77 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		BAA8F90DAC5EDA0C9BC9FAD4 /* Frameworks */ = {
@@ -346,6 +360,8 @@
 				3E50FD171BAD3BD000E39A77 /* ViewController.swift in Sources */,
 				3E50FD151BAD3BD000E39A77 /* AppDelegate.swift in Sources */,
 				3E07DEA31BAD9D0A00AE3D59 /* ParseHelper.swift in Sources */,
+				A5CF7FEA1BAEB0F9000EA399 /* ChannelFilterViewController.swift in Sources */,
+				A5BA1F891BAE7380002755E7 /* QRScannerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
