@@ -50,19 +50,19 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button type="submit" class="community btn btn-default off">Community 1</button>
-                        <button type="submit" class="community btn btn-default off">Community 2</button>
-                        <button type="submit" class="community btn btn-default off">Community 3</button>
-                        <button type="submit" class="community btn btn-default off">Community 4</button>
+                        <button type="submit" class="invisible community btn btn-default off">Community 1</button>
+                        <button type="submit" class="invisible community btn btn-default off">Community 2</button>
+                        <button type="submit" class="invisible community btn btn-default off">Community 3</button>
+                        <button type="submit" class="invisible community btn btn-default off">Community 4</button>
                         <div class="col-xs-12">
                             <div class="row">
                                 <form class="form home-form" role="form">
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <input type="text"
-                                                   maxlength="10"
+                                                   maxlength="50"
                                                    class="form-control"
-                                                   placeholder="1234567890"
+                                                   placeholder="ie. Who will win the next election?"
                                                    onsubmit=" event.preventDefault(); postQuestion()">
                                         </div>
                                     </div>
@@ -84,7 +84,7 @@
 </div>
 <script>
     var EXAMPLE_QUESTION = 'ie. Who will win the next election?';
-    var EXAMPLE_PHONE = '1234567890';
+    var EXAMPLE_PHONE = '+14256287248';
 
     Parse.initialize("h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK", "E6EhFQPwTQmU3Js7p4aalq080sKkS5UqT7vUrgJZ");
     var currentUser = Parse.User.current();
@@ -92,10 +92,44 @@
     if(currentUser){
         console.log('user!');
         // change signup box to question box!
-        $('input').val('');
-        $('input').attr('maxlength', 140);
-        $('input').attr('placeholder', EXAMPLE_QUESTION);
+//        $('input').val('');
+//        $('input').attr('maxlength', 140);
+//        $('input').attr('placeholder', EXAMPLE_QUESTION);
     }
+    else
+    {
+        Parse.User.logIn("calvin", "password", {
+            success: function(user) {
+                // Do stuff after successful login.
+            },
+            error: function(user, error) {
+                // The login failed. Check error to see why.
+            }
+        });
+    }
+
+//
+//    // create new user when asking for phone number
+//    var user = new Parse.User();
+//    user.set("username", '+1' + EXAMPLE_PHONE);
+//    user.set("password", '+1' + EXAMPLE_PHONE);
+//    user.set("phonenumber", '+1' + EXAMPLE_PHONE);
+//
+//    user.signUp(null, {
+//        success: function(user) {
+//            // change signup box to question box!
+//            $('input').val('');
+//            $('input').attr('maxlength', 140);
+//            $('input').attr('placeholder', EXAMPLE_QUESTION);
+//            $('input').focus();
+//        },
+//        error: function(user, error) {
+//            // Show the error message somewhere and let the user try again.
+//            alert('Oops, something went wrong. Try again?');
+//            $('input').focus();
+//        }
+//    });
+
 
     $('.btn .community').click(function(){
         alert("The paragraph was clicked.");
