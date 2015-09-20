@@ -92,7 +92,7 @@
     console.log('done initializing, starting polling');
 
     var Channel = Parse.Object.extend('Channel');
-    var channelQuery = new Parse.query(Channel);
+    var channelQuery = new Parse.Query(Channel);
     channelQuery.find({
         success: function(results){
             if(results.length == 0){
@@ -100,7 +100,7 @@
                 console.log('no channels found!');
             }
             else{
-                console.log('found results!')
+                console.log('found results!');
                 console.log($('input').val());
 
                 var Poll = Parse.Object.extend('Poll');
@@ -108,7 +108,7 @@
 
                 poll.set('open', true);
                 poll.set('submitter', currentUser);
-                poll.set('topic', $('input').val());
+                poll.set('topic', '');
                 poll.set('channel', channelsAvailable[0]);
 
                 poll.save().save(null, {
@@ -129,7 +129,7 @@
         }
     });
 
-//    var currentUser = Parse.User.current();
+    //    var currentUser = Parse.User.current();
     console.log('hello!');
 //    if(currentUser != null){
 //        console.log('user!');
@@ -204,7 +204,7 @@
         // already logged in - handle poll posting!
 //        if(currentUser != null){
         var Channel = Parse.Object.extend('Channel');
-        var channelQuery = new Parse.query(Channel);
+        var channelQuery = new Parse.Query(Channel);
         channelQuery.find({
             success: function(results){
                 if(results.length == 0){
@@ -212,10 +212,7 @@
                     console.log('no channels found!');
                 }
                 else{
-                    channelsAvailable = results;
-//                for(var i = 0; i < channelsAvailable.length; i ++){
-//                    $('.' + channelsAvailable[i]).addClass('optional');
-//                }
+                    console.log('found results!');
                     console.log($('input').val());
 
                     var Poll = Parse.Object.extend('Poll');
@@ -223,7 +220,7 @@
 
                     poll.set('open', true);
                     poll.set('submitter', currentUser);
-                    poll.set('topic', $('input').val());
+                    poll.set('topic', '');
                     poll.set('channel', channelsAvailable[0]);
 
                     poll.save().save(null, {
@@ -243,6 +240,7 @@
                 return false;
             }
         });
+
 //        }
 
         // first time logging in - produce communities to join
