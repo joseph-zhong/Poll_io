@@ -166,13 +166,14 @@
             success: function(results){
                 if(results.length == 0){
                     // bad results
-
+                    console.log('no channels found!');
                 }
                 else{
                     channelsAvailable = results;
 //                for(var i = 0; i < channelsAvailable.length; i ++){
 //                    $('.' + channelsAvailable[i]).addClass('optional');
 //                }
+                    console.log($('input').val());
 
                     var Poll = Parse.Object.extend('Poll');
                     var poll = new Poll();
@@ -182,14 +183,19 @@
                     poll.set('topic', $('input').val());
                     poll.set('channel', channelsAvailable[0]);
 
-                    poll.save().then(function(){
-                        console.log('poll posted!');
-                        return;
+                    poll.save().save(null, {
+                        success: function(newPoll) {
+                            console.log('new poll saved!');
+                        },
+                        error: function(newPoll, error) {
+                            console.log('new poll NOT saved');
+                        }
+                    });
                     })
                 }
             },
             error: function(error){
-                console.log('no channels!');
+                console.log('error in finding channels!');
                 return;
             }
         });
