@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e90202-8efb-4969-b36d-72a57770b970" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std.zip" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Black.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-BlackOblique.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Book.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-BookOblique.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Heavy.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-HeavyOblique.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Light.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-LightOblique.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Medium.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-MediumOblique.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Oblique.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/AvenirLTStd-Roman.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/avenir-lt-std/example.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.html" afterPath="$PROJECT_DIR$/example.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/fonts.css" afterPath="$PROJECT_DIR$/stylesheets/fonts.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WUHack.iws" />
@@ -39,23 +24,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="example.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="example.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.625">
-              <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.8903509">
+              <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
               <folding>
-                <marker date="1442730061000" expanded="true" signature="6448:6461" placeholder="..." />
+                <marker date="1442730816000" expanded="true" signature="5156:5169" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fonts.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fonts.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stylesheets/fonts.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8262712">
-              <caret line="39" column="26" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -115,8 +100,8 @@
         <option value="$PROJECT_DIR$/example2.html" />
         <option value="$PROJECT_DIR$/stylesheets/d3.css" />
         <option value="$PROJECT_DIR$/stylesheets/example.css" />
-        <option value="$PROJECT_DIR$/example.html" />
         <option value="$PROJECT_DIR$/stylesheets/fonts.css" />
+        <option value="$PROJECT_DIR$/example.html" />
       </list>
     </option>
   </component>
@@ -340,21 +325,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example.html">
+    <entry file="file://$PROJECT_DIR$/stylesheets/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.625">
-          <caret line="12" column="48" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <marker date="1442730061000" expanded="true" signature="6448:6461" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="41" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stylesheets/fonts.css">
+    <entry file="file://$PROJECT_DIR$/example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8262712">
-          <caret line="39" column="26" selection-start-line="39" selection-start-column="21" selection-end-line="39" selection-end-column="26" />
-          <folding />
+        <state vertical-scroll-proportion="0.8903509">
+          <caret line="92" column="8" selection-start-line="92" selection-start-column="8" selection-end-line="92" selection-end-column="8" />
+          <folding>
+            <marker date="1442730816000" expanded="true" signature="5156:5169" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

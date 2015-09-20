@@ -16,6 +16,7 @@
         .tk-proxima-nova-soft{font-family:"proxima-nova-soft",sans-serif;}
         .tk-futura-pt{font-family:"futura-pt",sans-serif;}
     </style>
+    <script src="//www.parsecdn.com/js/parse-1.6.2.min.js"></script>
     <script src='http://d3js.org/d3.v3.min.js'></script>
     <script src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -27,8 +28,8 @@
             <div class="container">
                 <nav class="navbar" role="navigation">
                     <div class="navbar-header">
-                        <a href="http://www.yikyakapp.com" class="logo">
-                            <img src="http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/global/logotype-white-01.svg" alt="">
+                        <a href="#" class="logo">
+                            <img src="" alt="">
                         </a>
                         <button type="button" class="navbar-toggle burger" data-toggle="collapse" data-target="#header-nav">
                             <span class="sr-only">Toggle navigation</span>
@@ -39,28 +40,6 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="header-nav">
-                        <ul class="nav navbar-nav navbar-right links">
-                            <li>
-                                <a href="http://www.yikyakapp.com/" class="active">Home</a>
-                            </li>
-                            <li>
-                                <a href="http://www.yikyakapp.com/features/" class="">Features</a>
-                            </li>
-                            <li>
-                                <a href="http://www.yikyakapp.com/jobs/" class="">Jobs</a>
-                            </li>
-                            <li>
-                                <a href="http://blog.yikyakapp.com" class="">Blog</a>
-                            </li>
-                            <li>
-                                <a href="http://support.yikyakapp.com" class="">Support</a>
-                            </li>
-                            <li class="social-links">
-                                <a target="_blank" href="https://twitter.com/YikYakApp"><img src="http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/global/twitter-logo.svg" alt="Twitter"></a>
-                                <a target="_blank" href="https://www.facebook.com/yikyakapp"><img src="http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/global/facebook-logo.svg" alt="Facebook"></a>
-                                <a target="_blank" href="http://instagram.com/yikyakapp"><img src="http://www.yikyakapp.com/wp-content/themes/yik-yak-web-general/img/global/instagram-logo.svg" alt="Instagram"></a>
-                            </li>
-                        </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div><!-- /.container-fluid -->
@@ -88,12 +67,15 @@
                                             <input type="text"
                                                    maxlength="140"
                                                    class="form-control"
-                                                   placeholder="Why is the sky blue?">
+                                                   placeholder="Why is the sky blue?"
+                                                   onsubmit="postQuestion()">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <button type="submit" class="btn btn-default">Submit</button>
+                                            <button type="submit"
+                                                    class="btn btn-default"
+                                                    onsubmit="postQuestion()">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -105,6 +87,12 @@
         </div>
     </div>
 </div>
+<script>
+    Parse.initialize("h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK", "E6EhFQPwTQmU3Js7p4aalq080sKkS5UqT7vUrgJZ");
+    function postQuestion(){
+        
+    }
+</script>
 
 <div class="d3-body">
 
