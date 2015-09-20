@@ -70,7 +70,7 @@
                                         <div class="form-group">
                                             <button type="submit"
                                                     class="btn btn-default"
-                                                    onsubmit=" event.preventDefault(); postQuestion()">Submit</button>
+                                                    onsubmit=" event.preventDefault(); postQuestion() return false">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -87,17 +87,17 @@
     var EXAMPLE_PHONE = '+14256287248';
 
     Parse.initialize("h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK", "E6EhFQPwTQmU3Js7p4aalq080sKkS5UqT7vUrgJZ");
-    var currentUser = Parse.User.current();
+//    var currentUser = Parse.User.current();
     console.log('hello!');
-    if(currentUser != null){
-        console.log('user!');
+//    if(currentUser != null){
+//        console.log('user!');
         // change signup box to question box!
 //        $('input').val('');
 //        $('input').attr('maxlength', 140);
 //        $('input').attr('placeholder', EXAMPLE_QUESTION);
-    }
-    else
-    {
+//    }
+//    else
+//    {
 //        console.log('logging in...');
 //        // really brute force automated login process
 //        Parse.User.logIn("calvin", "password", {
@@ -131,7 +131,7 @@
 //                });
 //            }
 //        });
-    }
+//    }
 
 //
 //    // create new user when asking for phone number
@@ -186,16 +186,18 @@
                     poll.save().save(null, {
                         success: function(newPoll) {
                             console.log('new poll saved!');
+                            return false;
                         },
                         error: function(newPoll, error) {
                             console.log('new poll NOT saved');
+                            return false;
                         }
                     });
                 }
             },
             error: function(error){
                 console.log('error in finding channels!');
-                return;
+                return false;
             }
         });
 //        }
