@@ -5,7 +5,7 @@ html, body{
     text-align: center;
 }
 
-#home{
+.home{
     height:100vh;
     background-color: #30dbbd;
 }
