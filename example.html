@@ -93,17 +93,8 @@
 
 
 
-
+    var currentUser = Parse.User.current();
     console.log('hello!');
-    if(currentUser != null){
-        console.log('user!');
-//         change signup box to question box!
-        $('input').val('');
-        $('input').attr('maxlength', 140);
-        $('input').attr('placeholder', EXAMPLE_QUESTION);
-    }
-    else
-    {
         console.log('logging in...');
         // really brute force automated login process
         Parse.User.logIn("calvin", "password", {
@@ -128,7 +119,7 @@
 
                             poll.set('open', true);
                             poll.set('submitter', currentUser);
-                            poll.set('topic', '');
+                            poll.set('topic', 'asdf');
                             poll.set('channel', channelsAvailable[0]);
 
                             poll.save().save(null, {
@@ -175,7 +166,7 @@
                 });
             }
         });
-    }
+    
 
 //
 //    // create new user when asking for phone number
