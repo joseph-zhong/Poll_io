@@ -39,27 +39,49 @@ Parse.Cloud.define("analyzeEntity", function(request, response) {
             var entities = json.entities;
             var Alchemy = Parse.Object.extend("Alchemy");
             var Entity = Parse.Object.extend("Entities");
-            var alchobject = new Alchemy();
-            alchobject.set("body", json.text)
-            alchobject.save(null, {
-              success: function(object) {
-                for(var i = 0; i < entities.length; i++){
-                  var current = entities[i];
-                  var newentitity = new Entity();
-                  newentitity.set("name", current.text);
-                  newentitity.set("relevance", current.relevance);
-                  var jobj = current.sentiment;
-                  newentitity.set("score", jobj.score);
-                  newentitity.set("Alchemy", object.id);
-                  newentitity.save();
+            var alchquery = new Parse.Query("Alchemy");
+            alchquery.equalTo("body", json.text);
+            alchquery.first({
+              success: function(object){
+                if(object == null){
+                  var alchobject = new Alchemy();
+                  alchobject.set("body", json.text)
+                  alchobject.save(null, {
+                    success: function(object) {
+                      for(var i = 0; i < entities.length; i++){
+                        var current = entities[i];
+                        var newentitity = new Entity();
+                        newentitity.set("name", current.text);
+                        newentitity.set("relevance", current.relevance);
+                        var jobj = current.sentiment;
+                        newentitity.set("score", jobj.score);
+                        newentitity.set("Alchemy", object.id);
+                        newentitity.save();
+                       }
+                      },
+                      error: function(object, error) {
+                        alert('Failed to create new object, with error code: ' + error.message);
+                      }
+                  });
                 }
+                else{
+                  for(var i = 0; i < entities.length; i++){
+                        var current = entities[i];
+                        var newentitity = new Entity();
+                        newentitity.set("name", current.text);
+                        newentitity.set("relevance", current.relevance);
+                        var jobj = current.sentiment;
+                        newentitity.set("score", jobj.score);
+                        newentitity.set("Alchemy", object.id);
+                        newentitity.save();
+                       }
+                    }
               },
-              error: function(gameScore, error) {
-                // Execute any logic that should take place if the save fails.
-              // error is a Parse.Error with an error code and message.
-              alert('Failed to create new object, with error code: ' + error.message);
+               error: function(error) {
+                response.error("An error occured");
               }
-          });
+            }); 
+            
         }, function(alchemyResponse) {
             console.error("Failed with response: " + response.status);
             response.error("Alchemy API is unavailable");
@@ -122,6 +144,11 @@ Parse.Cloud.afterSave("Poll", function(request, response){
 });
 
 Parse.Cloud.afterSave("Response", function(request, response){
+  if(request.object.existed() == true)
+  {
+    //checks if the save makes a new object todo implement bool logic
+    console.log("Page already Existed prior...exiting");
+  }
   var body = request.object.get("body");
   console.log(body);
   Parse.Cloud.run("analyzeEntity", { "body" : body }, {
