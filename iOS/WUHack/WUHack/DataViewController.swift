@@ -36,17 +36,17 @@ class DataViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         loadQuestion({
             (entity, alchemy, error) -> Void in
-//            if error == nil
-//            {
-//                var question : String = alchemy!.objectForKey("body") as! String
-//                self.questionLabel.text = question
-//                
-//                var entityName : String = entity!.objectForKey("name") as! String
-//                var entityScore : Double = (entity!.objectForKey("score") as! NSString).doubleValue
-//                
-//                
-//                self.entityLabel.text = self.entitySummary(entityName, score: entityScore)
-//            }
+            if error == nil
+            {
+                var question : String = alchemy!.objectForKey("body") as! String
+                self.questionLabel.text = question
+                
+                var entityName : String = entity!.objectForKey("name") as! String
+                var entityScore : Double = (entity!.objectForKey("score") as! NSString).doubleValue
+                
+                
+                self.entityLabel.text = self.entitySummary(entityName, score: entityScore)
+            }
         })
     }
 
@@ -83,7 +83,7 @@ class DataViewController: UIViewController {
             scoreDescription = "ecstatic"
         }
         
-        return "Attitude towards \(name) is \(scoreDescription)"
+        return "Attitude towards \(name) is \(scoreDescription)."
     }
     
     func loadQuestion(completion: (PFObject?, PFObject?, NSError?) -> Void)

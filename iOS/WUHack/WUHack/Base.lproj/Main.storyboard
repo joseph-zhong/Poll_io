@@ -90,8 +90,8 @@
                                     <segue destination="Wc5-4a-vPD" kind="show" id="gEV-zW-tIL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrW-7Z-Wfj">
-                                <rect key="frame" x="499" y="20" width="85" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrW-7Z-Wfj">
+                                <rect key="frame" x="481" y="20" width="103" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Channels &gt;">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,10 +101,12 @@
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.85882352939999995" blue="0.74117647060000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VrW-7Z-Wfj" firstAttribute="top" secondItem="svg-HH-jUh" secondAttribute="bottom" id="FEQ-A0-a1l"/>
                             <constraint firstItem="w9h-ts-iT5" firstAttribute="leading" secondItem="wCb-3L-d7D" secondAttribute="leadingMargin" constant="41" id="Guk-z8-h6N"/>
                             <constraint firstAttribute="centerX" secondItem="w9h-ts-iT5" secondAttribute="centerX" id="GzB-BC-e6q"/>
                             <constraint firstItem="MOQ-jk-nmM" firstAttribute="leading" secondItem="wCb-3L-d7D" secondAttribute="leadingMargin" id="OYN-op-aYY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NPd-Jb-mh1" secondAttribute="trailing" constant="40" id="Oim-ga-ZVU"/>
+                            <constraint firstItem="VrW-7Z-Wfj" firstAttribute="trailing" secondItem="wCb-3L-d7D" secondAttribute="trailingMargin" id="S11-Bl-fW1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="w9h-ts-iT5" secondAttribute="trailing" constant="40" id="hmd-ef-sgO"/>
                             <constraint firstItem="NPd-Jb-mh1" firstAttribute="leading" secondItem="wCb-3L-d7D" secondAttribute="leadingMargin" constant="41" id="hoL-Sh-QEw"/>
                             <constraint firstAttribute="centerX" secondItem="NPd-Jb-mh1" secondAttribute="centerX" id="iwY-uv-pdR"/>
