@@ -204,27 +204,27 @@
         // TODO: make input and button invisible with animate.css
         // TODO: make communities appear with animate.css
 
-        console.log('hello!');
-        // create new user when asking for phone number
-        var user = new Parse.User();
-        user.set("username", '+1' + $('input').value);
-        user.set("password", '+1' + $('input').value);
-        user.set("phonenumber", '+1' + $('input').value);
-
-        user.signUp(null, {
-        success: function(user) {
-            // change signup box to question box!
-            $('input').val('');
-            $('input').attr('maxlength', 140);
-            $('input').attr('placeholder', EXAMPLE_QUESTION);
-            $('input').focus();
-            },
-            error: function(user, error) {
-                // Show the error message somewhere and let the user try again.
-                alert('Oops, something went wrong. Try again?');
-                $('input').focus();
-            }
-        });
+//        console.log('hello!');
+//        // create new user when asking for phone number
+//        var user = new Parse.User();
+//        user.set("username", '+1' + $('input').value);
+//        user.set("password", '+1' + $('input').value);
+//        user.set("phonenumber", '+1' + $('input').value);
+//
+//        user.signUp(null, {
+//        success: function(user) {
+//            // change signup box to question box!
+//            $('input').val('');
+//            $('input').attr('maxlength', 140);
+//            $('input').attr('placeholder', EXAMPLE_QUESTION);
+//            $('input').focus();
+//            },
+//            error: function(user, error) {
+//                // Show the error message somewhere and let the user try again.
+//                alert('Oops, something went wrong. Try again?');
+//                $('input').focus();
+//            }
+//        });
     }
 
 

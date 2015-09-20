@@ -26,10 +26,10 @@
       <file leaf-file-name="example.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667">
-              <caret line="193" column="17" selection-start-line="193" selection-start-column="17" selection-end-line="193" selection-end-column="17" />
+            <state vertical-scroll-proportion="0.40350878">
+              <caret line="227" column="5" selection-start-line="227" selection-start-column="5" selection-end-line="227" selection-end-column="5" />
               <folding>
-                <marker date="1442743131000" expanded="true" signature="10861:10874" placeholder="..." />
+                <marker date="1442743267000" expanded="true" signature="10903:10916" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -345,10 +345,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667">
-          <caret line="193" column="17" selection-start-line="193" selection-start-column="17" selection-end-line="193" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.40350878">
+          <caret line="227" column="5" selection-start-line="227" selection-start-column="5" selection-end-line="227" selection-end-column="5" />
           <folding>
-            <marker date="1442743131000" expanded="true" signature="10861:10874" placeholder="..." />
+            <marker date="1442743267000" expanded="true" signature="10903:10916" placeholder="..." />
           </folding>
         </state>
       </provider>
