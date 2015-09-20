@@ -147,6 +147,26 @@ Parse.Cloud.afterSave("Response", function(request, response){
   });
 });
 
+Parse.Cloud.beforeSave("Response", function(request, response) {
+    var twilio_id = request.object.twilio_id;
+    var Response = Parse.Object.extend("Response");
+    var query = new Parse.Query(Response);
+    query.equalTo("twilio_id", twilio_id);
+    query.find({
+      success: function(results) {
+          if (results.length === 0) {
+              response.success();
+          }
+          else {
+              response.error("Response already exists");
+         }
+      },
+      error: function(error) {
+          response.error();
+      }
+  });
+});
+
 
 Parse.Cloud.afterSave("Alchemy", function(request, response){
   //parsing for webapp here
