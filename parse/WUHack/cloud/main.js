@@ -4,8 +4,6 @@ var client = require('twilio')('ACce74634b53fda11e3948c74211d8e8f8', 'ACce74634b
 var ALCHEMY_URL = "http://gateway-a.watsonplatform.net/";
 var APIKEY  = "503b2b1e7803bf3be7e7eadad8ddf4b81abd822f";
 
-var userquery = new Parse.Query('_User');
-
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
@@ -54,6 +52,7 @@ Parse.Cloud.beforeSave("Poll", function(request, response){
   channel.fetch({
     success: function(channelobject){
       console.log(channelobject);
+      var userquery = new Parse.Query('Parse.User');
       //query.equalTo("Channels", channelobject.id);
       userquery.find({
         success: function(results) {
@@ -84,7 +83,6 @@ Parse.Cloud.beforeSave("Poll", function(request, response){
           },
           error: function(error){
             console.log(error);
-            response.error(error);
           }
         })
         response.success();
