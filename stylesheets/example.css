@@ -7,6 +7,10 @@ html, body{
     background-color:#30dbbd;
 }
 
+svg {
+    background-color: white;
+}
+
 .home{
     height:100vh;
     background-color: #30dbbd;

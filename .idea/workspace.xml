@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e90202-8efb-4969-b36d-72a57770b970" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/stylesheets/example.css" afterPath="$PROJECT_DIR$/stylesheets/example.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.html" afterPath="$PROJECT_DIR$/example.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -27,10 +28,10 @@
       <file leaf-file-name="example.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46929824">
-              <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.55701756">
+              <caret line="232" column="26" selection-start-line="226" selection-start-column="25" selection-end-line="232" selection-end-column="26" />
               <folding>
-                <marker date="1442740919000" expanded="true" signature="9654:9667" placeholder="..." />
+                <marker date="1442742450000" expanded="true" signature="10543:10556" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -40,7 +41,7 @@
         <entry file="file://$PROJECT_DIR$/stylesheets/example.css">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+              <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -339,17 +340,17 @@
     <entry file="file://$PROJECT_DIR$/stylesheets/example.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46929824">
-          <caret line="100" column="37" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.55701756">
+          <caret line="232" column="26" selection-start-line="226" selection-start-column="25" selection-end-line="232" selection-end-column="26" />
           <folding>
-            <marker date="1442740919000" expanded="true" signature="9654:9667" placeholder="..." />
+            <marker date="1442742450000" expanded="true" signature="10543:10556" placeholder="..." />
           </folding>
         </state>
       </provider>
