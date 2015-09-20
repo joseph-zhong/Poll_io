@@ -93,7 +93,7 @@
 
 
 
-    //    var currentUser = Parse.User.current();
+
     console.log('hello!');
     if(currentUser != null){
         console.log('user!');
@@ -110,6 +110,7 @@
             success: function(user) {
                 // Do stuff after successful login.
                 console.log('successful login: ' + user);
+                var currentUser = Parse.User.current();
                 var Channel = Parse.Object.extend('Channel');
                 var channelQuery = new Parse.Query(Channel);
                 channelQuery.find({
