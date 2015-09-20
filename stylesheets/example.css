@@ -32,7 +32,7 @@ html, body{
     }
 }
 
-button .btn-default {
+.btn-default {
     color: #fff;
     width: 22%;
     height: 50px;
@@ -58,7 +58,7 @@ button .btn-default {
 
         #wrapper.home .home-form input {
             text-align: center;
-            width: 80%;
+            width: 65%;
             height: 50px;
             color: #282828;
             border: none;

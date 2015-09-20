@@ -271,8 +271,8 @@
                         return 'bar positive';
                     }
                 })
-                .attr('x', function(d) { return xScale(d.score) - 9; })
-                .attr('width', 18)
+                .attr('x', function(d) { return xScale(d.score) - 8; })
+                .attr('width', 16)
                 .attr('y', function(d) { return yScale(d.count); })
                 .attr('height', function(d) { return height - yScale(d.count); })
                 .on('mouseover', tip.show)
@@ -303,7 +303,7 @@
         $('.bar').filter(function() {
             return ( $(this).css('fill') != SELECTED_COLOR );
         }).css('fill', DARK_GRAY); // change background color of all black spans
-        $('svg').css('background-color', 'white');
+//        $('svg').css('background-color', 'white');
         // selected bar becomes selected color
         $(this).css('fill', SELECTED_COLOR);
     });
