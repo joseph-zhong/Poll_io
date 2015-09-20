@@ -1,41 +1,41 @@
-@import url("/assets/avenir-lt-std");
+@import url("/assets/fonts");
 @font-face {
     font-family: AvenirLTStd-Book;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-Book.woff);
+    src: url(/assets/fonts/AvenirLTStd-Book.woff);
 }
 @font-face {
     font-family: AvenirLTStd-Black;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-Black.woff);
+    src: url(/assets/fonts/AvenirLTStd-Black.woff);
 }
 @font-face {
     font-family: AvenirLTStd-BlackOblique;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-BlackOblique.woff);
+    src: url(/assets/fonts/AvenirLTStd-BlackOblique.woff);
 }
 @font-face {
     font-family: AvenirLTStd-BookOblique;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-BookOblique.woff);
+    src: url(/assets/fonts/AvenirLTStd-BookOblique.woff);
 }
 @font-face {
     font-family: AvenirLTStd-Light;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-Light.woff);
+    src: url(/assets/fonts/AvenirLTStd-Light.woff);
 }
 @font-face {
     font-family: AvenirLTStd-LightOblique;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-LightOblique.woff);
+    src: url(/assets/fonts/AvenirLTStd-LightOblique.woff);
 }
 @font-face {
     font-family: AvenirLTStd-Medium;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-Medium.woff);
+    src: url(/assets/fonts/AvenirLTStd-Medium.woff);
 }
 @font-face {
     font-family: AvenirLTStd-MediumOblique;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-MediumOblique.woff);
+    src: url(/assets/fonts/AvenirLTStd-MediumOblique.woff);
 }
 @font-face {
     font-family: AvenirLTStd-Oblique;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-Oblique.woff);
+    src: url(/assets/fonts/AvenirLTStd-Oblique.woff);
 }
 @font-face {
     font-family: AvenirLTStd-Roman;
-    src: url(/assets/avenir-lt-std/AvenirLTStd-Roman.woff);
+    src: url(/assets/fonts/AvenirLTStd-Roman.woff);
 }
