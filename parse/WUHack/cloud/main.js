@@ -36,29 +36,21 @@ Parse.Cloud.define("analyzeEntity", function(request, response) {
             // console.log(alchemyResponse);
             console.log(alchemyResponse.text);
             var json = JSON.parse(alchemyResponse.text);
-            console.log("parsed");
             var entities = json.entities;
             var Alchemy = Parse.Object.extend("Alchemy");
             var Entity = Parse.Object.extend("Entities");
-            console.log("1");
             var alchobject = new Alchemy();
             alchobject.set("body", json.text)
-            console.log(entities.length);
             alchobject.save(null, {
               success: function(object) {
                 for(var i = 0; i < entities.length; i++){
                   var current = entities[i];
-                  console.log(current.text);
                   var newentitity = new Entity();
-                  console.log("new entity");
                   newentitity.set("name", current.text);
                   newentitity.set("relevance", current.relevance);
-                  console.log("second parse");
                   var jobj = current.sentiment;
-
                   newentitity.set("score", jobj.score);
                   newentitity.set("Alchemy", object.id);
-                  console.log(newentitity);
                   newentitity.save();
                 }
               },
@@ -140,12 +132,14 @@ Parse.Cloud.afterSave("Response", function(request, response){
   });
 });
 
+//note if things are being saved synchronously as this goes it will not work
 Parse.Cloud.beforeSave("Response", function(request, response) {
-    var twilio_id = request.object.twilio_id;
+    var responsequery = new Parse.Query("Response");
+    var twilio_id = request.object.get("twilio_id");
+    console.log(twilio_id);
     var Response = Parse.Object.extend("Response");
-    var query = new Parse.Query(Response);
-    query.equalTo("twilio_id", twilio_id);
-    query.first({
+    responsequery.equalTo("twilio_id", twilio_id);
+    responsequery.first({
       success: function(object) {
           if (object) {
               console.log("object found");
