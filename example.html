@@ -154,6 +154,7 @@ $(document).onkeydown(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
         alert('You pressed a "enter" key in textbox');
+        postQuestion($('input').val());
         // pass code here
     }
 
@@ -184,7 +185,7 @@ $(document).onkeydown(function(event){
     var channelsAvailable;
 
 
-    function postQuestion(){
+    function postQuestion(topic){
         // already logged in - handle poll posting!
 //        if(currentUser != null){
         var Channel = Parse.Object.extend('Channel');
@@ -204,7 +205,7 @@ $(document).onkeydown(function(event){
 
                     poll.set('open', true);
                     poll.set('submitter', currentUser);
-                    poll.set('topic', '');
+                    poll.set('topic', topic);
                     poll.set('channel', channelsAvailable[0]);
 
                     poll.save().save(null, {
