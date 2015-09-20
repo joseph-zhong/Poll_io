@@ -2,10 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24e90202-8efb-4969-b36d-72a57770b970" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/example.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/fonts.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/minimize.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/minimize.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/params.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/cdl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/decompress-zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/handlebars" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/mkdirp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/nopt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/opn" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/rimraf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/semver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/user-home" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/.bin/which" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/bower-registry-client/node_modules/.bin/rimraf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/bower-registry-client/node_modules/request/node_modules/.bin/uuid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/cardinal/node_modules/redeyed/node_modules/.bin/esparse" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/cardinal/node_modules/redeyed/node_modules/.bin/esvalidate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/configstore/node_modules/.bin/js-yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/configstore/node_modules/js-yaml/node_modules/.bin/esparse" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/configstore/node_modules/js-yaml/node_modules/.bin/esvalidate" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/decompress-zip/node_modules/touch/node_modules/.bin/nopt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/github/node_modules/.bin/mime" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/handlebars/node_modules/.bin/uglifyjs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/inquirer/node_modules/chalk/node_modules/.bin/has-ansi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/inquirer/node_modules/chalk/node_modules/.bin/strip-ansi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/inquirer/node_modules/chalk/node_modules/.bin/supports-color" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/inquirer/node_modules/readline2/node_modules/.bin/strip-ansi" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/insight/node_modules/.bin/os-name" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/insight/node_modules/os-name/node_modules/.bin/osx-release" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/insight/node_modules/os-name/node_modules/win-release/node_modules/.bin/semver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/request/node_modules/.bin/uuid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/update-notifier/node_modules/.bin/latest-version" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/update-notifier/node_modules/latest-version/node_modules/package-json/node_modules/registry-url/node_modules/.bin/rc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/update-notifier/node_modules/latest-version/node_modules/package-json/node_modules/registry-url/node_modules/rc/node_modules/.bin/strip-json-comments" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/bower/node_modules/update-notifier/node_modules/semver-diff/node_modules/.bin/semver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/.bin/mime" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/.bin/node-http-proxy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/.bin/rimraf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/http-proxy/node_modules/utile/node_modules/.bin/mkdirp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/http-proxy/node_modules/utile/node_modules/.bin/ncp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/log4js/node_modules/.bin/semver" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/.bin/uglifyjs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/karma/node_modules/socket.io/node_modules/socket.io-client/node_modules/.bin/wscat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/protractor/node_modules/.bin/jasmine" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/protractor/node_modules/.bin/minijasminenode" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/protractor/node_modules/request/node_modules/.bin/har-validator" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/protractor/node_modules/request/node_modules/.bin/uuid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/node_modules/protractor/node_modules/selenium-webdriver/node_modules/.bin/rimraf" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/fonts.css" afterPath="$PROJECT_DIR$/stylesheets/fonts.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.html" afterPath="$PROJECT_DIR$/example.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WUHack.iws" />
@@ -30,8 +75,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.333333">
-              <caret line="71" column="88" selection-start-line="68" selection-start-column="0" selection-end-line="71" selection-end-column="88" />
+            <state vertical-scroll-proportion="-10.25">
+              <caret line="347" column="98" selection-start-line="347" selection-start-column="94" selection-end-line="347" selection-end-column="98" />
               <folding>
                 <marker date="1442724529000" expanded="true" signature="1981:1994" placeholder="..." />
                 <marker date="1442724529000" expanded="true" signature="10404:10417" placeholder="..." />
@@ -43,8 +88,8 @@
       <file leaf-file-name="example.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31578946">
-              <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.1754386">
+              <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -140,6 +185,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WUHack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WUHack" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="stylesheets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -149,6 +208,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/stylesheets" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -196,13 +260,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="202" y="23" width="1226" height="826" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24979253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24979253" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -233,18 +297,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fonts.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.333333">
-          <caret line="71" column="88" selection-start-line="68" selection-start-column="0" selection-end-line="71" selection-end-column="88" />
+        <state vertical-scroll-proportion="-10.25">
+          <caret line="347" column="98" selection-start-line="347" selection-start-column="94" selection-end-line="347" selection-end-column="98" />
           <folding>
             <marker date="1442724529000" expanded="true" signature="1981:1994" placeholder="..." />
             <marker date="1442724529000" expanded="true" signature="10404:10417" placeholder="..." />
@@ -252,18 +308,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minimize.min.css">
+    <entry file="file://$PROJECT_DIR$/stylesheets/fonts.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.084745765">
-          <caret line="4" column="122270" selection-start-line="4" selection-start-column="122270" selection-end-line="4" selection-end-column="122270" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31578946">
-          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.1754386">
+          <caret line="8" column="58" selection-start-line="8" selection-start-column="58" selection-end-line="8" selection-end-column="58" />
           <folding />
         </state>
       </provider>
