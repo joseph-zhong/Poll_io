@@ -150,7 +150,14 @@
             }
         });
 
-$(document)
+$(document).onkeydown(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        alert('You pressed a "enter" key in textbox');
+        // pass code here
+    }
+
+})
 
 //
 //    // create new user when asking for phone number
