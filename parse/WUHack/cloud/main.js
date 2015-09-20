@@ -4,7 +4,7 @@ var client = require('twilio')('ACce74634b53fda11e3948c74211d8e8f8', 'ACce74634b
 var ALCHEMY_URL = "http://gateway-a.watsonplatform.net/";
 var APIKEY  = "503b2b1e7803bf3be7e7eadad8ddf4b81abd822f";
 
-var userquery = new Parse.Query('_User');
+var userquery = new Parse.Query('Parse.User');
 
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
@@ -40,7 +40,7 @@ Parse.Cloud.define("analyzeResponse", function(request, response) {
     }
 });
 
-Parse.Cloud.beforeSave("Poll", function(request, response){
+Parse.Cloud.afterSave("Poll", function(request, response){
   console.log("started");
   if(request.object.existed() == true)
   {
@@ -87,7 +87,7 @@ Parse.Cloud.beforeSave("Poll", function(request, response){
             response.error(error);
           }
         })
-        response.success();
+        //response.success();
       },
       error: function(error){
         console.log(error);
