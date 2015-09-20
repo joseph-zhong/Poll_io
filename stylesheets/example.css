@@ -2,10 +2,49 @@ html, body{
     height: 100%;
     width: 100%;
     font-family: "AvenirLTStd-Book";
+    text-align: center;
 }
 
 #home{
     height:100vh;
-    text-align: center;
     background-color: #30dbbd;
+}
+
+#wrapper.home .home-form button {
+    color: #fff;
+    width: 100%;
+    border: none;
+    height: 50px;
+    box-shadow: none;
+    text-shadow: none;
+    background-image: none;
+    background-color: #708a86;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+@media (max-width: 992px) {
+    #wrapper.home .home-form input {
+        font-size: 20px;
+    }
+
+    @media (max-width: 1200px) {
+        #wrapper.home .home-form input {
+            font-size: 15px;
+        }
+
+        #wrapper.home .home-form input {
+            width: 100%;
+            height: 50px;
+            color: #282828;
+            border: none;
+            font-family: "AvenirLTStd-Book";
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            border-radius: 5px;
+        }
+    }
 }
