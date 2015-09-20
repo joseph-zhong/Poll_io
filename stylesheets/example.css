@@ -44,6 +44,7 @@ html, body{
     -ms-border-radius: 5px;
     border-radius: 5px;
     margin:6px;
+    border-style:none;
 }
 
 @media (max-width: 992px) {
@@ -95,8 +96,13 @@ button.active,
     color: #ffffff;
     background-color: rgb(38, 175, 151);
     border-color: rgb(38, 175, 151);
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
 }
+
+.invisible {
+    display: none;
+}
+
