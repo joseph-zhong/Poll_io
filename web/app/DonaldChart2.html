@@ -3,6 +3,7 @@
 <style>
     body {
         font: 10px sans-serif;
+        background-color: white;
     }
 
     .axis path,
@@ -199,7 +200,6 @@
             .attr('width', 14)
             .attr('y', function(d) { return yScale(d.count); })
             .attr('height', function(d) { return height - yScale(d.count); })
-            .on('click', showSentences())
             .on('mouseover', tip.show)
             .on('mouseout', tip.hide);
     });
@@ -247,9 +247,33 @@
 //    function stopped() {
 //        if (d3.event.defaultPrevented) d3.event.stopPropagation();
 //    }
-    $(document).on("click",".bar", function () {
-        console.log('hello');
-        $(this).css('fill', '#A0C55F');
-        console.log('hello2');
+
+    // constant colors for dark gray and selected turquoise
+    var DARK_GRAY = '#45484B';
+    var SELECTED_COLOR = '#30dbbd';
+    var SELECTED_RGB = 'rgb(48, 219, 189)';
+    var DARK_RGB = 'rgb(69, 72, 75)';
+
+    // dynamic function to handle bar clicks
+    $(document).on('click', '.bar', function () {
+        if($(this).css('fill') == SELECTED_RGB){
+            // show selected
+            $(this).css('fill', '');
+
+            // reset darkened bars
+            $('.bar').filter(function() {
+                return ( $(this).css('fill') == DARK_RGB );
+            }).attr('style', '');
+            $('body').attr('style', '');
+            return;
+        }
+
+        // all become dark gray
+        $('.bar').filter(function() {
+            return ( $(this).css('fill') != SELECTED_COLOR );
+        }).css('fill', DARK_GRAY); // change background color of all black spans
+        $('body').css('background-color', 'antiquewhite');
+        // selected bar becomes selected color
+        $(this).css('fill', SELECTED_COLOR);
     });
 </script>
