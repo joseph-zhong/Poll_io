@@ -120,7 +120,7 @@
                             poll.set('open', true);
                             poll.set('submitter', currentUser);
                             poll.set('topic', 'asdf');
-                            poll.set('channel', channelsAvailable[0]);
+                            poll.set('channel', results[0]);
 
                             poll.save().save(null, {
                                 success: function(newPoll) {
@@ -166,7 +166,7 @@
                 });
             }
         });
-    
+
 
 //
 //    // create new user when asking for phone number

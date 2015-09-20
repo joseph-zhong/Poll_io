@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="24e90202-8efb-4969-b36d-72a57770b970" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/example.html" afterPath="$PROJECT_DIR$/example.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WUHack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,10 +26,10 @@
       <file leaf-file-name="example.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/example.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.091324">
-              <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.65296805">
+              <caret line="122" column="55" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
               <folding>
-                <marker date="1442744621000" expanded="true" signature="12316:12329" placeholder="..." />
+                <marker date="1442744671000" expanded="true" signature="12302:12315" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -346,10 +345,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.091324">
-          <caret line="168" column="4" selection-start-line="168" selection-start-column="4" selection-end-line="168" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.65296805">
+          <caret line="122" column="55" selection-start-line="122" selection-start-column="55" selection-end-line="122" selection-end-column="55" />
           <folding>
-            <marker date="1442744621000" expanded="true" signature="12316:12329" placeholder="..." />
+            <marker date="1442744671000" expanded="true" signature="12302:12315" placeholder="..." />
           </folding>
         </state>
       </provider>
