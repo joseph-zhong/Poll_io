@@ -63,14 +63,14 @@
                                                    maxlength="10"
                                                    class="form-control"
                                                    placeholder="1234567890"
-                                                   onsubmit="postQuestion()">
+                                                   onsubmit=" return false; postQuestion()">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
                                             <button type="submit"
                                                     class="btn btn-default"
-                                                    onsubmit="postQuestion()">Submit</button>
+                                                    onsubmit=" return false; postQuestion()">Submit</button>
                                         </div>
                                     </div>
                                 </form>
@@ -271,8 +271,8 @@
                         return 'bar positive';
                     }
                 })
-                .attr('x', function(d) { return xScale(d.score) - 7; })
-                .attr('width', 14)
+                .attr('x', function(d) { return xScale(d.score) - 9; })
+                .attr('width', 18)
                 .attr('y', function(d) { return yScale(d.count); })
                 .attr('height', function(d) { return height - yScale(d.count); })
                 .on('mouseover', tip.show)
