@@ -140,9 +140,9 @@
   // y-axis
   var yScale;
 
-  d3.json('DonaldData.json', function(error, data){
+  d3.json('data.json', function(error, data){
     if(error){
-      console.err('DonaldData.json Error: ' + error);
+      console.err('data.json Error: ' + error);
       return;
     }
     JsonData = data;
