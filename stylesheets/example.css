@@ -1,13 +1,34 @@
 html, body{
     height: 100%;
     width: 100%;
-    font-family: "AvenirLTStd-Book";
+    font-family: 'Ubuntu', sans-serif;
     text-align: center;
 }
 
 .home{
     height:100vh;
     background-color: #30dbbd;
+}
+
+.row {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+@media (max-width: 1199px){
+    #wrapper.home .home-slogan {
+        line-height: 30px;
+        font-size: 30px;
+    }
+    #wrapper.home .home-slogan {
+        color: #fff;
+        clear: both;
+        padding: 15px;
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 40px;
+        margin-top: 80px;
+    }
 }
 
 #wrapper.home .home-form button {
@@ -40,11 +61,25 @@ html, body{
             height: 50px;
             color: #282828;
             border: none;
-            font-family: "AvenirLTStd-Book";
+            font-family: 'Ubuntu', sans-serif;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
             -ms-border-radius: 5px;
             border-radius: 5px;
         }
     }
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open > .dropdown-toggle.btn-default {
+    color: #ffffff;
+    background-color: rgb(38, 175, 151);
+    border-color: rgb(38, 175, 151);
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
 }

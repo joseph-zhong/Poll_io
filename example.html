@@ -10,12 +10,9 @@
     <link rel="stylesheet" href="stylesheets/d3.css">
     <link rel="stylesheet" href="stylesheets/example.css">
     <link rel="stylesheet" href="stylesheets/normalize.css">
-    <link rel="stylesheet" href="stylesheets/fonts.css">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <style type='text/css'>
-        .tk-proxima-nova-soft{font-family:"proxima-nova-soft",sans-serif;}
-        .tk-futura-pt{font-family:"futura-pt",sans-serif;}
-    </style>
+
     <script src="//www.parsecdn.com/js/parse-1.6.2.min.js"></script>
     <script src='http://d3js.org/d3.v3.min.js'></script>
     <script src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js'></script>
@@ -59,15 +56,19 @@
                         </div>
                     </div>
                     <div class="row">
+                        <button type="submit" class="btn btn-default">Community 1</button>
+                        <button type="submit" class="btn btn-default">Community 2</button>
+                        <button type="submit" class="btn btn-default">Community 3</button>
+                        <button type="submit" class="btn btn-default">Community 4</button>
                         <div class="col-xs-12">
                             <div class="row">
                                 <form class="form home-form" role="form">
                                     <div class="col-md-7">
                                         <div class="form-group">
                                             <input type="text"
-                                                   maxlength="140"
+                                                   maxlength="10"
                                                    class="form-control"
-                                                   placeholder="Why is the sky blue?"
+                                                   placeholder="1234567890"
                                                    onsubmit="postQuestion()">
                                         </div>
                                     </div>
@@ -88,9 +89,57 @@
     </div>
 </div>
 <script>
+    var EXAMPLE_QUESTION = 'ie. Why is Donald Trump...Donald Trump?';
+    var EXAMPLE_PHONE = '1234567890';
+
     Parse.initialize("h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK", "E6EhFQPwTQmU3Js7p4aalq080sKkS5UqT7vUrgJZ");
+    var currentUser = Parse.User.current();
+    if(currentUser){
+        // change signup box to question box!
+        $('input').val('');
+        $('input').attr('maxlength', 140);
+        $('input').attr('placeholder', EXAMPLE_QUESTION);
+    }
+
     function postQuestion(){
-        
+        // already logged in - handle poll posting!
+        if(currentUser){
+            var Poll = Parse.Object.extend('Poll');
+            var poll = new Poll();
+
+            poll.set('open', true);
+            poll.set('submitter', currentUser);
+            poll.set('topic', $('input').val());
+            //poll.set('channel', ChannelHere);
+
+
+        }
+
+        // first time logging in - produce communities to join
+        // TODO: make input and button invisible with animate.css
+        // TODO: make communities appear with animate.css
+
+        console.log('hello!');
+        // create new user when asking for phone number
+        var user = new Parse.User();
+        user.set("username", '+1' + $('input').value);
+        user.set("password", '+1' + $('input').value);
+        user.set("phonenumber", '+1' + $('input').value);
+
+        user.signUp(null, {
+        success: function(user) {
+            // change signup box to question box!
+            $('input').val('');
+            $('input').attr('maxlength', 140);
+            $('input').attr('placeholder', EXAMPLE_QUESTION);
+            $('input').focus();
+            },
+            error: function(user, error) {
+                // Show the error message somewhere and let the user try again.
+                alert('Oops, something went wrong. Try again?');
+                $('input').focus();
+            }
+        });
     }
 </script>
 
