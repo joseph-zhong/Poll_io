@@ -17,19 +17,20 @@ html, body{
     margin-right: -15px;
 }
 
-@media (max-width: 1199px){
+#wrapper.home .home-slogan {
+    color: #fff;
+    clear: both;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 40px;
+    margin-top: 80px;
+}
+
+@media (max-width: 1200px){
     #wrapper.home .home-slogan {
         line-height: 30px;
         font-size: 30px;
-    }
-    #wrapper.home .home-slogan {
-        color: #fff;
-        clear: both;
-        padding: 15px;
-        font-size: 30px;
-        font-weight: 300;
-        line-height: 40px;
-        margin-top: 80px;
     }
 }
 
@@ -48,6 +49,37 @@ html, body{
     border-style:none;
 }
 
+#wrapper.home .home-form input {
+    text-align: center;
+    width: 65%;
+    height: 50px;
+    color: #282828;
+    border: none;
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#wrapper.home .home-form input::-webkit-input-placeholder {
+    text-align: center;
+}
+
+#wrapper.home .home-form input:-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+}
+
+#wrapper.home .home-form input::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+}
+
+#wrapper.home .home-form input:-ms-input-placeholder {
+    text-align: center;
+}
+
 @media (max-width: 992px) {
     #wrapper.home .home-form input {
         font-size: 20px;
@@ -61,37 +93,6 @@ html, body{
         @media (max-width: 1600px) {
             #wrapper.home .home-form input {
                 font-size: 15px;
-            }
-
-            #wrapper.home .home-form input {
-                text-align: center;
-                width: 65%;
-                height: 50px;
-                color: #282828;
-                border: none;
-                font-family: 'Ubuntu', sans-serif;
-                -webkit-border-radius: 5px;
-                -moz-border-radius: 5px;
-                -ms-border-radius: 5px;
-                border-radius: 5px;
-            }
-
-            #wrapper.home .home-form input::-webkit-input-placeholder {
-                text-align: center;
-            }
-
-            #wrapper.home .home-form input:-moz-placeholder {
-                /* Firefox 18- */
-                text-align: center;
-            }
-
-            #wrapper.home .home-form input::-moz-placeholder {
-                /* Firefox 19+ */
-                text-align: center;
-            }
-
-            #wrapper.home .home-form input:-ms-input-placeholder {
-                text-align: center;
             }
         }
     }

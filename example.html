@@ -98,12 +98,30 @@
     }
     else
     {
+        // really brute force automated login process
         Parse.User.logIn("calvin", "password", {
             success: function(user) {
                 // Do stuff after successful login.
             },
             error: function(user, error) {
                 // The login failed. Check error to see why.
+                Parse.User.logIn("aneesh", "password", {
+                    success: function(user) {
+                        // Do stuff after successful login.
+                    },
+                    error: function(user, error) {
+                        // The login failed. Check error to see why.
+                        Parse.User.logIn("joseph", "password", {
+                            success: function(user) {
+                                // Do stuff after successful login.
+                            },
+                            error: function(user, error) {
+                                // The login failed. Check error to see why.
+
+                            }
+                        });
+                    }
+                });
             }
         });
     }
