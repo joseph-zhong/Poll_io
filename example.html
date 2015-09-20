@@ -89,7 +89,7 @@
     Parse.initialize("h9oTr2VclhlSeGPwLjm3VWGS5TmeXLnUmdXfwXpK", "E6EhFQPwTQmU3Js7p4aalq080sKkS5UqT7vUrgJZ");
     var currentUser = Parse.User.current();
     console.log('hello!');
-    if(currentUser){
+    if(currentUser != null){
         console.log('user!');
         // change signup box to question box!
 //        $('input').val('');
@@ -98,24 +98,31 @@
     }
     else
     {
+        console.log('logging in...');
         // really brute force automated login process
         Parse.User.logIn("calvin", "password", {
             success: function(user) {
                 // Do stuff after successful login.
+                console.log('successful login: ' + user);
             },
             error: function(user, error) {
+                console.log('failed login: ' + error);
                 // The login failed. Check error to see why.
                 Parse.User.logIn("aneesh", "password", {
                     success: function(user) {
                         // Do stuff after successful login.
+                        console.log('successful login: ' + user);
                     },
                     error: function(user, error) {
+                        console.log('failed login: ' + error);
                         // The login failed. Check error to see why.
                         Parse.User.logIn("joseph", "password", {
                             success: function(user) {
                                 // Do stuff after successful login.
+                                console.log('successful login: ' + user);
                             },
                             error: function(user, error) {
+                                console.log('failed login: ' + error);
                                 // The login failed. Check error to see why.
 
                             }
