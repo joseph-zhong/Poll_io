@@ -3,6 +3,7 @@
 <style>
     body {
         font: 10px sans-serif;
+        background-color: white;
     }
 
     .axis path,
@@ -199,7 +200,6 @@
             .attr('width', 14)
             .attr('y', function(d) { return yScale(d.count); })
             .attr('height', function(d) { return height - yScale(d.count); })
-//            .on('click', showSentences())
             .on('mouseover', tip.show)
             .on('mouseout', tip.hide);
     });
@@ -248,6 +248,7 @@
 //        if (d3.event.defaultPrevented) d3.event.stopPropagation();
 //    }
 
+    // constant colors for dark gray and selected turquoise
     var DARK_GRAY = '#45484B';
     var SELECTED_COLOR = '#30dbbd';
     var SELECTED_RGB = 'rgb(48, 219, 189)';
@@ -263,7 +264,7 @@
             $('.bar').filter(function() {
                 return ( $(this).css('fill') == DARK_RGB );
             }).attr('style', '');
-
+            $('body').attr('style', '');
             return;
         }
 
@@ -271,16 +272,8 @@
         $('.bar').filter(function() {
             return ( $(this).css('fill') != SELECTED_COLOR );
         }).css('fill', DARK_GRAY); // change background color of all black spans
-
+        $('body').css('background-color', 'antiquewhite');
         // selected bar becomes selected color
         $(this).css('fill', SELECTED_COLOR);
     });
-
-    // convert a hexidecimal color string to 0..255 R,G,B
-    hexToRGB = function(hex) {
-        var r = hex >> 16;
-        var g = hex >> 8 & 0xFF;
-        var b = hex & 0xFF;
-        return [r,g,b];
-    }
 </script>
