@@ -91,89 +91,90 @@
 
     console.log('done initializing, starting polling');
 
-    var Channel = Parse.Object.extend('Channel');
-    var channelQuery = new Parse.Query(Channel);
-    channelQuery.find({
-        success: function(results){
-            if(results.length == 0){
-                // bad results
-                console.log('no channels found!');
-            }
-            else{
-                console.log('found results!');
-                console.log($('input').val());
 
-                var Poll = Parse.Object.extend('Poll');
-                var poll = new Poll();
-
-                poll.set('open', true);
-                poll.set('submitter', currentUser);
-                poll.set('topic', '');
-                poll.set('channel', channelsAvailable[0]);
-
-                poll.save().save(null, {
-                    success: function(newPoll) {
-                        console.log('new poll saved!');
-                        return false;
-                    },
-                    error: function(newPoll, error) {
-                        console.log('new poll NOT saved');
-                        return false;
-                    }
-                });
-            }
-        },
-        error: function(error){
-            console.log('error in finding channels!');
-            return false;
-        }
-    });
 
     //    var currentUser = Parse.User.current();
     console.log('hello!');
-//    if(currentUser != null){
-//        console.log('user!');
-        // change signup box to question box!
-//        $('input').val('');
-//        $('input').attr('maxlength', 140);
-//        $('input').attr('placeholder', EXAMPLE_QUESTION);
-//    }
-//    else
-//    {
-//        console.log('logging in...');
-//        // really brute force automated login process
-//        Parse.User.logIn("calvin", "password", {
-//            success: function(user) {
-//                // Do stuff after successful login.
-//                console.log('successful login: ' + user);
-//            },
-//            error: function(user, error) {
-//                console.log('failed login: ' + error);
-//                // The login failed. Check error to see why.
-//                Parse.User.logIn("aneesh", "password", {
-//                    success: function(user) {
-//                        // Do stuff after successful login.
-//                        console.log('successful login: ' + user);
-//                    },
-//                    error: function(user, error) {
-//                        console.log('failed login: ' + error);
-//                        // The login failed. Check error to see why.
-//                        Parse.User.logIn("joseph", "password", {
-//                            success: function(user) {
-//                                // Do stuff after successful login.
-//                                console.log('successful login: ' + user);
-//                            },
-//                            error: function(user, error) {
-//                                console.log('failed login: ' + error);
-//                                // The login failed. Check error to see why.
-//
-//                            }
-//                        });
-//                    }
-//                });
-//            }
-//        });
-//    }
+    if(currentUser != null){
+        console.log('user!');
+//         change signup box to question box!
+        $('input').val('');
+        $('input').attr('maxlength', 140);
+        $('input').attr('placeholder', EXAMPLE_QUESTION);
+    }
+    else
+    {
+        console.log('logging in...');
+        // really brute force automated login process
+        Parse.User.logIn("calvin", "password", {
+            success: function(user) {
+                // Do stuff after successful login.
+                console.log('successful login: ' + user);
+                var Channel = Parse.Object.extend('Channel');
+                var channelQuery = new Parse.Query(Channel);
+                channelQuery.find({
+                    success: function(results){
+                        if(results.length == 0){
+                            // bad results
+                            console.log('no channels found!');
+                        }
+                        else{
+                            console.log('found results!');
+                            console.log($('input').val());
+
+                            var Poll = Parse.Object.extend('Poll');
+                            var poll = new Poll();
+
+                            poll.set('open', true);
+                            poll.set('submitter', currentUser);
+                            poll.set('topic', '');
+                            poll.set('channel', channelsAvailable[0]);
+
+                            poll.save().save(null, {
+                                success: function(newPoll) {
+                                    console.log('new poll saved!');
+                                    return false;
+                                },
+                                error: function(newPoll, error) {
+                                    console.log('new poll NOT saved');
+                                    return false;
+                                }
+                            });
+                        }
+                    },
+                    error: function(error){
+                        console.log('error in finding channels!');
+                        return false;
+                    }
+                });
+            },
+            error: function(user, error) {
+                console.log('failed login: ' + error);
+                // The login failed. Check error to see why.
+                Parse.User.logIn("aneesh", "password", {
+                    success: function(user) {
+                        // Do stuff after successful login.
+                        console.log('successful login: ' + user);
+                    },
+                    error: function(user, error) {
+                        console.log('failed login: ' + error);
+                        // The login failed. Check error to see why.
+                        Parse.User.logIn("joseph", "password", {
+                            success: function(user) {
+                                // Do stuff after successful login.
+                                console.log('successful login: ' + user);
+                            },
+                            error: function(user, error) {
+                                console.log('failed login: ' + error);
+                                // The login failed. Check error to see why.
+
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    }
 
 //
 //    // create new user when asking for phone number
