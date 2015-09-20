@@ -68,9 +68,10 @@
 <body>
 <script src='http://d3js.org/d3.v3.min.js'></script>
 <script src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>
 
-    var margin = {top: 100, right: 40, bottom: 30, left: 40},
+    var margin = {top: 85, right: 40, bottom: 25, left: 40},
         width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0)
                 - margin.left - margin.right,
         height = Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
@@ -104,8 +105,10 @@
         .attr('width', width + margin.left + margin.right)
         .attr('height', height + margin.top + margin.bottom)
         .append('g')
-        .call(zoom.on("zoom", redraw))
+//        .call(zoom.on("zoom", redraw))
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+    var JsonData;
+
 
     function redraw() {
         var translation = d3.event.translate,
@@ -133,19 +136,23 @@
     var xScale = d3.scale.linear()
             .domain([-100, 100]) // these are value mappings
             .range([0, width]); // these are pixels
-
+    // y-axis
     var yScale;
 
     d3.json('DonaldData.json', function(error, data){
-
-
+        if(error){
+            console.err('DonaldData.json Error: ' + error);
+            return;
+        }
+        JsonData = data;
         var xAxis = d3.svg.axis()
-                .scale(xScale)
-                .orient('bottom');
+            .scale(xScale)
+            .orient('bottom');
 
         yScale = d3.scale.linear()
-                .domain([0, d3.max(data, function(d) { return d.count; })])
-                .range([height, 0]);
+            .domain([0, d3.max(data, function(d) { return d.count; })])
+            .range([height, 0]);
+
         //Define Y axis
         var yAxis = d3.svg.axis()
             .scale(yScale)
@@ -192,6 +199,7 @@
             .attr('width', 14)
             .attr('y', function(d) { return yScale(d.count); })
             .attr('height', function(d) { return height - yScale(d.count); })
+            .on('click', showSentences())
             .on('mouseover', tip.show)
             .on('mouseout', tip.hide);
     });
@@ -239,4 +247,9 @@
 //    function stopped() {
 //        if (d3.event.defaultPrevented) d3.event.stopPropagation();
 //    }
+    $(document).on("click",".bar", function () {
+        console.log('hello');
+        $(this).css('fill', '#A0C55F');
+        console.log('hello2');
+    });
 </script>
