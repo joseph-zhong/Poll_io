@@ -31,6 +31,3 @@ DerivedData
 # Carthage/Checkouts
 
 Carthage/Build
-
-#intellij
-.idea/
