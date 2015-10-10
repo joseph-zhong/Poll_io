@@ -13,7 +13,7 @@
     <link href='https://fonts.googleapis.com/css?family=Ubuntu:300' rel='stylesheet' type='text/css'>
     <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <script src="//www.parsecdn.com/js/parse-1.6.2.min.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.6.2.min.js"></script>
     <script src='http://d3js.org/d3.v3.min.js'></script>
     <script src='http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -56,24 +56,23 @@
                         <button type="submit" class="invisible community btn btn-default off">Community 4</button>
                         <div class="col-xs-12">
                             <div class="row">
-                                <form class="form home-form" role="form">
+                                <div class="form home-form" role="form">
                                     <div class="col-md-7">
                                         <div class="form-group">
-                                            <input type="text"
-                                                   maxlength="50"
-                                                   class="form-control"
-                                                   placeholder="ie. Who will win the next election?"
-                                                   onsubmit=" event.preventDefault(); postQuestion()">
+                                            <input id="question"
+                                                    type="text"
+                                                    maxlength="50"
+                                                    class="form-control"
+                                                    placeholder="ie. Who will win the next election?">
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <button type="submit"
-                                                    class="btn btn-default"
-                                                    onsubmit=" event.preventDefault(); postQuestion() return false">Submit</button>
+                                            <button id="submit"
+                                                    class="btn btn-default">Submit</button>
                                         </div>
                                     </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -92,6 +91,11 @@
     console.log('done initializing, starting polling');
 
 
+    $('#submit').click(function() {
+        var text = $("#question").val();
+        postQuestion(text);
+        $("#question").val("");
+    })
 
     // login
     var currentUser = Parse.User.current();
@@ -117,7 +121,7 @@
                         }
                         else{
                             console.log('found results!');
-                            console.log($('input').val());
+                            console.log($('#question').val());
 
                             var Poll = Parse.Object.extend('Poll');
                             var poll = new Poll();
@@ -126,7 +130,7 @@
                             poll.set('submitter', currentUser);
 
                             // TOPIC IS NOT SET
-                            poll.set('topic', $('input').val());
+                            poll.set('topic', $('#question').val());
                             poll.set('channel', results[0]);
 
                             // POST
@@ -150,14 +154,16 @@
             }
         });
 
+/*
 $(document).onkeydown(function(event){
     var keycode = (event.keyCode ? event.keyCode : event.which);
     if(keycode == '13'){
         alert('You pressed a "enter" key in textbox');
+        postQuestion($('#question').val());
         // pass code here
     }
 
-})
+})*/
 
 //
 //    // create new user when asking for phone number
@@ -184,9 +190,7 @@ $(document).onkeydown(function(event){
     var channelsAvailable;
 
 
-    function postQuestion(){
-        // already logged in - handle poll posting!
-//        if(currentUser != null){
+    function postQuestion(topic){
         var Channel = Parse.Object.extend('Channel');
         var channelQuery = new Parse.Query(Channel);
         channelQuery.find({
@@ -197,17 +201,18 @@ $(document).onkeydown(function(event){
                 }
                 else{
                     console.log('found results!');
-                    console.log($('input').val());
 
                     var Poll = Parse.Object.extend('Poll');
                     var poll = new Poll();
 
                     poll.set('open', true);
                     poll.set('submitter', currentUser);
-                    poll.set('topic', '');
-                    poll.set('channel', channelsAvailable[0]);
+                    poll.set('topic', topic);
+                    poll.set('channel', results[0]);
 
-                    poll.save().save(null, {
+                    console.log(poll);
+
+                    poll.save(null, {
                         success: function(newPoll) {
                             console.log('new poll saved!');
                             return false;
@@ -221,11 +226,12 @@ $(document).onkeydown(function(event){
             },
             error: function(error){
                 console.log('error in finding channels!');
+                console.log(error);
                 return false;
             }
         });
 
-//        }
+    }
 
         // first time logging in - produce communities to join
         // TODO: make input and button invisible with animate.css
@@ -252,7 +258,7 @@ $(document).onkeydown(function(event){
 //                $('input').focus();
 //            }
 //        });
-    }
+
 
 
 
