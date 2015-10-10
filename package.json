@@ -1,0 +1,26 @@
+{
+  "name": "poll-io-node",
+  "version": "1.0.0",
+  "description": "Node app to connect to Mongo and handle IO",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jaberer/WUHack.git"
+  },
+  "author": "Aneesh, Joseph, Calvin, and Will",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaberer/Poll_io/issues"
+  },
+  "homepage": "https://github.com/Jaberer/Poll_io",
+  "dependencies": {
+    "consolidate": "^0.13.1",
+    "express": "^4.13.3",
+    "mongodb": "^2.0.45",
+    "twilio": "^2.5.1"
+  }
+}
